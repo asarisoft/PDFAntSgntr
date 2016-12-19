@@ -9,6 +9,8 @@ exports.show = function(viewerId, src, success, error) {
         return;
     }
     var iframe = document.createElement('iframe');
+    iframe.width = "100%"
+    iframe.height = "100%"
     elem.appendChild(iframe);
     iframe.src = src;
     success();
