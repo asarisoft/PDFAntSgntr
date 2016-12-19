@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="software.mplus.cordova-pdf-viewer" version="0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PdfViewer</name>
+    <js-module name="CordovaPdfViewer" src="www/CordovaPdfViewer.js">
+        <clobbers target="pdfViewer" />
+    </js-module>
+</plugin>
