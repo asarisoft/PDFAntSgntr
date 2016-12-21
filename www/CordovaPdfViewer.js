@@ -8,10 +8,10 @@ exports.show = function(viewerId, src, success, error) {
         error(msg);
         return;
     }
-    var iframe = document.createElement('iframe');
-    iframe.width = "100%"
-    iframe.height = "100%"
-    elem.appendChild(iframe);
-    iframe.src = src;
+    elem.style.setProperty('overflow', 'auto');
+    elem.style.setProperty('-webkit-overflow-scrolling', 'touch');
+
+    var innerHTML = '<object style="width: 100%; height: 100%" data="' + src + '"></object>';
+    elem.innerHTML = innerHTML;
     success();
 };
