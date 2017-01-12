@@ -10,7 +10,89 @@
                 <param name="ios-package" value="CordovaPdfViewer" />
             </feature>
         </config-file>
+
         <header-file src="src/ios/CordovaPdfViewer.h" />
         <source-file src="src/ios/CordovaPdfViewer.m" />
+
+        <header-file src="src/ios/Reader/Sources/CGPDFDocument.h"/>
+        <source-file src="src/ios/Reader/Sources/CGPDFDocument.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderConstants.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderConstants.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderContentPage.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderContentPage.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderContentTile.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderContentTile.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderContentView.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderContentView.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderDocument.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderDocument.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderDocumentOutline.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderDocumentOutline.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderMainPagebar.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderMainPagebar.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderMainToolbar.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderMainToolbar.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbCache.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbCache.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbFetch.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbFetch.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbQueue.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbQueue.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbRender.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbRender.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbRequest.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbRequest.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbView.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbView.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderThumbsView.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderThumbsView.m"/>
+        <header-file src="src/ios/Reader/Sources/ReaderViewController.h"/>
+        <source-file src="src/ios/Reader/Sources/ReaderViewController.m"/>
+        <header-file src="src/ios/Reader/Sources/ThumbsMainToolbar.h"/>
+        <source-file src="src/ios/Reader/Sources/ThumbsMainToolbar.m"/>
+        <header-file src="src/ios/Reader/Sources/ThumbsViewController.h"/>
+        <source-file src="src/ios/Reader/Sources/ThumbsViewController.m"/>
+        <header-file src="src/ios/Reader/Sources/UIXToolbarView.h"/>
+        <source-file src="src/ios/Reader/Sources/UIXToolbarView.m"/>
+
+
+        <resource-file src="src/ios/Reader/Graphics/AppIcon-076.png"/>
+        <resource-file src="src/ios/Reader/Graphics/AppIcon-120.png"/>
+        <resource-file src="src/ios/Reader/Graphics/AppIcon-152.png"/>
+        <resource-file src="src/ios/Reader/Graphics/AppIcon-167.png"/>
+        <resource-file src="src/ios/Reader/Graphics/AppIcon-180.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Button-H.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Button-H@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Button-H@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Button-N.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Button-N@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Button-N@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Email.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Email@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Email@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Export.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Export@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Export@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Mark-N.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Mark-N@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Mark-N@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Mark-Y.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Mark-Y@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Mark-Y@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Print.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Print@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Print@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Thumbs.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Thumbs@2x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/Reader-Thumbs@3x.png"/>
+        <resource-file src="src/ios/Reader/Graphics/all.txt"/>
+
+        <framework src="UIKit.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="ImageIO.framework"/>
+        <framework src="MessageUI.framework"/>
+
     </platform>
 </plugin>
