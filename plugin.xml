@@ -4,4 +4,13 @@
     <js-module name="CordovaPdfViewer" src="www/CordovaPdfViewer.js">
         <clobbers target="pdfViewer" />
     </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CordovaPdfViewer">
+                <param name="ios-package" value="CordovaPdfViewer" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CordovaPdfViewer.h" />
+        <source-file src="src/ios/CordovaPdfViewer.m" />
+    </platform>
 </plugin>

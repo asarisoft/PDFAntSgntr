@@ -1,6 +1,23 @@
 var exec = require('cordova/exec');
 
 exports.show = function(viewerId, src, success, error) {
+
+    var elem = document.getElementById(viewerId);
+    if (!elem) {
+        msg = 'Unable to find element with id ' + viewerId;
+        console.log(msg);
+        error(msg);
+        return;
+    }
+
+    var rect = elem.getBoundingClientRect();
+    console.log(rect);
+
+    exec(success, error, "CordovaPdfViewer", "show", [src, rect.top, rect.left, rect.width, rect.height]);
+};
+
+
+exports.show2 = function(viewerId, src, success, error) {
     var elem = document.getElementById(viewerId);
     if (!elem) {
         msg = 'Unable to find element with id ' + viewerId;
