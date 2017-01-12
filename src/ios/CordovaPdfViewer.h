@@ -8,9 +8,15 @@
 
 
 #import <Cordova/CDV.h>
+#import "ReaderViewController.h"
 
 @interface CordovaPdfViewer : CDVPlugin
 
+@property ReaderViewController *readerViewController;
+
 - (void)show:(CDVInvokedUrlCommand*)command;
+
+- (void)redim:(CDVInvokedUrlCommand*)command;
+
 
 @end
