@@ -26,18 +26,19 @@
 
     NSLog(@"Trying to display using pdf reader");
 
-    CGRect myBox = CGRectMake(x, y, w, h);
+    CGRect myBox = CGRectMake(y, x, w, h);
 
     NSBundle* main = [NSBundle mainBundle];
     NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
 
     ReaderDocument *document = [ReaderDocument withDocumentFilePath:localPath password: nil];
+
     ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
     [self.viewController addChildViewController: readerViewController];
 
 
-    myBox.origin.y += self.viewController.topLayoutGuide.length;
-    myBox.size.height -= self.viewController.topLayoutGuide.length;
+    //myBox.origin.y += self.viewController.topLayoutGuide.length;
+    //myBox.size.height -= self.viewController.topLayoutGuide.length;
 
     readerViewController.view.frame = myBox;
     [self.webView addSubview:readerViewController.view];
