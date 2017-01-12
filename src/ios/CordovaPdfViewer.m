@@ -17,16 +17,16 @@
 {
     NSString* filename = [command.arguments objectAtIndex:0];
     NSString* directory = [command.arguments objectAtIndex:1];
-    int x = [[command.arguments objectAtIndex:2] intValue];
-    int y = [[command.arguments objectAtIndex:3] intValue];
+    int top = [[command.arguments objectAtIndex:2] intValue];
+    int left = [[command.arguments objectAtIndex:3] intValue];
     int w = [[command.arguments objectAtIndex:4] intValue];
     int h = [[command.arguments objectAtIndex:5] intValue];
 
-    NSLog(@"filename=%@ directory=%@ x=%d y=%d h=%d w=%d", filename, directory, x, y, w, h);
+    NSLog(@"filename=%@ directory=%@ x=%d y=%d h=%d w=%d", filename, directory, left, top, w, h);
 
     NSLog(@"Trying to display using pdf reader");
 
-    CGRect myBox = CGRectMake(y, x, w, h);
+    CGRect myBox = CGRectMake(left, top, w, h);
 
     NSBundle* main = [NSBundle mainBundle];
     NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
