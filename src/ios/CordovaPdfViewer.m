@@ -23,8 +23,6 @@
 
     NSLog(@"filename=%@ directory=%@ top=%d left=%d h=%d w=%d", filename, directory, left, top, w, h);
 
-    NSLog(@"Trying to display using pdf reader");
-
     CGRect viewerBox = CGRectMake(left, top, w, h);
 
     NSBundle* main = [NSBundle mainBundle];
@@ -34,7 +32,6 @@
 
     self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
     [self.viewController addChildViewController: self.readerViewController];
-
 
     self.readerViewController.view.frame = viewerBox;
     [self.webView addSubview: self.readerViewController.view];
@@ -56,6 +53,13 @@
     CGRect viewerBox = CGRectMake(left, top, w, h);
     self.readerViewController.view.frame = viewerBox;
 
+    CDVPluginResult* pluginResult = nil;
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)dismiss:(CDVInvokedUrlCommand*)command
+{
+    self.readerViewController = nil;
     CDVPluginResult* pluginResult = nil;
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }

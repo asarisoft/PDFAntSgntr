@@ -8,6 +8,10 @@ var isCurrentlyViewing = false;
 
 function onOrientationChange(e) {
     console.log('Orientation changed');
+    if (!isCurrentlyViewing) {
+        return;
+    }
+
     console.log(e);
     console.log(window.orientation);
     var rect = viewerElement.getBoundingClientRect();
@@ -62,6 +66,12 @@ exports.show = function(viewerId, src, success, error) {
 
 exports.redim = function(success, error, top, left, width, height) {
     exec(success, error, "CordovaPdfViewer", "redim", [top, left, width, height]);
+};
+
+exports.dismiss = function(success, error) {
+    console.log('Dismiss');
+    isCurrentlyViewing = false;
+    exec(success, error, "CordovaPdfViewer", "dismiss");
 };
 
 
