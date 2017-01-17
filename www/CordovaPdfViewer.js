@@ -49,11 +49,12 @@ exports.show = function(viewerId, src, success, error) {
         return;
     }
 
-    var filename = src.replace( /.*\//, "" );
-    var directory = src.slice(src, -1 * filename.length - 1); // -1 for the /
-    filename = filename.slice(0, -4);
+    //var filename = src.replace( /.*\//, "" );
+    //var directory = src.slice(src, -1 * filename.length - 1); // -1 for the /
+    //filename = filename.slice(0, -4);
 
-    console.log('dir=' + directory + '  filename=' + filename);
+    //console.log('dir=' + directory + '  filename=' + filename);
+    console.log('src=' + src);
 
     var rect = elem.getBoundingClientRect();
     console.log(rect);
@@ -61,7 +62,7 @@ exports.show = function(viewerId, src, success, error) {
     isCurrentlyViewing = true;
     viewerElement = elem;
 
-    exec(success, error, "CordovaPdfViewer", "show", [filename, directory, rect.top, rect.left, rect.width, rect.height]);
+    exec(success, error, "CordovaPdfViewer", "show", [src, "", rect.top, rect.left, rect.width, rect.height]);
 };
 
 exports.redim = function(success, error, top, left, width, height) {

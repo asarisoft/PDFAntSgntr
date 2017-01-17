@@ -25,10 +25,10 @@
 
     CGRect viewerBox = CGRectMake(left, top, w, h);
 
-    NSBundle* main = [NSBundle mainBundle];
-    NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
+//    NSBundle* main = [NSBundle mainBundle];
+//    NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
 
-    ReaderDocument *document = [ReaderDocument withDocumentFilePath:localPath password: nil];
+    ReaderDocument *document = [ReaderDocument withDocumentFilePath:filename password: nil];
 
     self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
     [self.viewController addChildViewController: self.readerViewController];
