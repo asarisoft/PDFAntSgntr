@@ -26,6 +26,10 @@ function onOrientationChange(e) {
 
 
 exports.show = function(viewerId, src, success, error) {
+    if (isCurrentlyViewing) {
+        exec(function() {}, function() {}, "CordovaPdfViewer", "dismiss");
+    }
+
     var extension = src.split('.').pop();
 
     console.log('Source ' + src);
