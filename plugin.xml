@@ -87,7 +87,6 @@
         <resource-file src="src/ios/Reader/Graphics/Reader-Thumbs.png"/>
         <resource-file src="src/ios/Reader/Graphics/Reader-Thumbs@2x.png"/>
         <resource-file src="src/ios/Reader/Graphics/Reader-Thumbs@3x.png"/>
-        <resource-file src="src/ios/Reader/Graphics/all.txt"/>
 
         <framework src="UIKit.framework"/>
         <framework src="Foundation.framework"/>
