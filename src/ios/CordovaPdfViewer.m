@@ -59,6 +59,9 @@
 
 - (void)dismiss:(CDVInvokedUrlCommand*)command
 {
+    NSLog(@"Dismiss now from code");
+    [self.readerViewController.view removeFromSuperview];
+    [self.readerViewController removeFromParentViewController];
     self.readerViewController = nil;
     CDVPluginResult* pluginResult = nil;
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
