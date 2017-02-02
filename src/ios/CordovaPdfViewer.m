@@ -9,6 +9,7 @@
 #import "CordovaPdfViewer.h"
 #import <Cordova/CDV.h>
 #import "ReaderViewController.h"
+#import "MyReaderDocument.h"
 
 @implementation CordovaPdfViewer
 
@@ -28,7 +29,7 @@
 //    NSBundle* main = [NSBundle mainBundle];
 //    NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
 
-    ReaderDocument *document = [ReaderDocument withDocumentFilePath:filename password: nil];
+    MyReaderDocument *document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: @"TITRE"];
 
     self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
     [self.viewController addChildViewController: self.readerViewController];
