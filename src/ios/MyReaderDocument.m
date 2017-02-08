@@ -13,9 +13,6 @@
 
 + (ReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title
 {
-    NSLog(@"======= Init");
-    NSLog(title);
-
     MyReaderDocument *document = nil; // ReaderDocument object
 
     document = (MyReaderDocument*) [MyReaderDocument unarchiveFromFileName:filePath password:phrase];
@@ -25,7 +22,6 @@
         document = [[MyReaderDocument alloc] initWithFilePath:filePath password:phrase];
     }
 
-    NSLog(@"======= Init2");
     document.title = title;
 
     return document;
