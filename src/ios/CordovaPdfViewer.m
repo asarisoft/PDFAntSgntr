@@ -16,20 +16,20 @@
 - (void)show:(CDVInvokedUrlCommand*)command
 {
     NSString* filename = [command.arguments objectAtIndex:0];
-    NSString* directory = [command.arguments objectAtIndex:1];
+    NSString* title = [command.arguments objectAtIndex:1];
     int top = [[command.arguments objectAtIndex:2] intValue];
     int left = [[command.arguments objectAtIndex:3] intValue];
     int w = [[command.arguments objectAtIndex:4] intValue];
     int h = [[command.arguments objectAtIndex:5] intValue];
 
-    NSLog(@"filename=%@ directory=%@ top=%d left=%d h=%d w=%d", filename, directory, left, top, w, h);
+    NSLog(@"filename=%@ title=%@ top=%d left=%d h=%d w=%d", filename, title, left, top, w, h);
 
     CGRect viewerBox = CGRectMake(left, top, w, h);
 
 //    NSBundle* main = [NSBundle mainBundle];
 //    NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
 
-    MyReaderDocument *document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: @"TITRE"];
+    MyReaderDocument *document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
 
     self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
     [self.viewController addChildViewController: self.readerViewController];

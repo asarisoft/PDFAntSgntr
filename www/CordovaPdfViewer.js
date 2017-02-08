@@ -5,6 +5,7 @@ window.addEventListener('orientationchange', onOrientationChange);
 
 var viewerElement;
 var documentSrc;
+var documentTitle;
 var isCurrentlyViewing = false;
 
 function onOrientationChange(e) {
@@ -26,13 +27,14 @@ function onOrientationChange(e) {
 }
 
 
-exports.show = function(_viewerId, src, success, error) {
+exports.show = function(_viewerId, src, _title, success, error) {
     if (isCurrentlyViewing) {
         exec(function() {}, function() {}, "CordovaPdfViewer", "dismiss");
     }
 
     viewerId = _viewerId;
     documentSrc = src;
+    documentTitle = _title;
     var extension = src.split('.').pop();
 
     console.log('Source ' + src);
@@ -61,7 +63,7 @@ exports.show = function(_viewerId, src, success, error) {
     isCurrentlyViewing = true;
     viewerElement = elem;
 
-    exec(success, error, "CordovaPdfViewer", "show", [src, "", rect.top, rect.left, rect.width, rect.height]);
+    exec(success, error, "CordovaPdfViewer", "show", [src, documentTitle, rect.top, rect.left, rect.width, rect.height]);
 };
 
 exports.redim = function(success, error, top, left, width, height) {
@@ -72,15 +74,16 @@ exports.redim = function(success, error, top, left, width, height) {
     console.log('Redim new');
     console.log(viewerId);
     console.log('src=' + documentSrc);
+    console.log('src=' + documentTitle);
     console.log('now showing again');
-    pdfViewer.show(viewerId, documentSrc, success, error); 
+    pdfViewer.show(viewerId, documentSrc, documentTitle, success, error); 
     //exec(success, error, "CordovaPdfViewer", "redim", [top, left, width, height]);
 };
 
 exports.autoRedim = function() {
     console.log('autoRedim');
-    success = function() {};
-    error   = function() {};
+    var success = function() {};
+    var error   = function() {};
     pdfViewer.redim(success, error, '', '', '', '');
 };
 
