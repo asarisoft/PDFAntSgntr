@@ -29,9 +29,9 @@
 //    NSBundle* main = [NSBundle mainBundle];
 //    NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
 
-    MyReaderDocument *document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
+    self.document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
 
-    self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+    self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument: self.document];
     [self.viewController addChildViewController: self.readerViewController];
 
     self.readerViewController.view.frame = viewerBox;
@@ -51,8 +51,22 @@
 
     NSLog(@"redim top=%d left=%d h=%d w=%d", left, top, w, h);
 
+    [self.readerViewController.view removeFromSuperview];
+    [self.readerViewController removeFromParentViewController];
+    self.readerViewController = nil;
+
+    CGRect viewerBox = CGRectMake(left, top, w, h);
+    self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument: self.document];
+    [self.viewController addChildViewController: self.readerViewController];
+
+    self.readerViewController.view.frame = viewerBox;
+    [self.webView addSubview: self.readerViewController.view];
+
+    /* This code does not work:
+
     CGRect viewerBox = CGRectMake(left, top, w, h);
     self.readerViewController.view.frame = viewerBox;
+    */
 
     CDVPluginResult* pluginResult = nil;
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
