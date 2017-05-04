@@ -13,17 +13,18 @@
 
 + (ReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title
 {
-    MyReaderDocument *document = nil; // ReaderDocument object
-
-    document = (MyReaderDocument*) [MyReaderDocument unarchiveFromFileName:filePath password:phrase];
-
-    if (document == nil) // Unarchive failed so create a new ReaderDocument object
-    {
-        document = [[MyReaderDocument alloc] initWithFilePath:filePath password:phrase];
-    }
-
+    MyReaderDocument *document = [[MyReaderDocument alloc] initWithFilePath:filePath password:phrase];
     document.title = title;
+    
+    // Get userdefaults storage
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *indexArray = [defaults objectForKey: document.fileName];
 
+    
+    for (NSNumber *index in indexArray) {
+        [document.bookmarks addIndex:[index intValue]];
+    }
+    
     return document;
 };
 

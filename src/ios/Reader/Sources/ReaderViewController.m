@@ -841,6 +841,24 @@
 	{
 		[document.bookmarks addIndex:currentPage]; [mainToolbar setBookmarkState:YES];
 	}
+    
+    // Get userdefaults storage
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // Build NSMutableArray (storable) from NSMutableIndexSet
+    NSUInteger index=[document.bookmarks firstIndex];
+    NSMutableArray *indexArray = [[NSMutableArray alloc] init];
+    while(index != NSNotFound)
+    {
+        NSNumber* indexWrapped = [NSNumber numberWithInteger:index];
+        [indexArray addObject:indexWrapped];
+        index=[document.bookmarks indexGreaterThanIndex: index];
+    }
+    
+    //Set bookmarks for document guid
+    [defaults setObject:indexArray forKey: document.fileName];
+    [defaults synchronize];
+
 
 #endif // end of READER_BOOKMARKS Option
 }
