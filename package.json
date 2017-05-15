@@ -1,0 +1,25 @@
+{
+  "name": "CordovaPdfViewer",
+  "version": "0.1.0",
+  "description": "",
+  "cordova": {
+    "id": "software.mplus.cordova-pdf-viewer",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-plus/cordova-pdf-viewer.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-plus/cordova-pdf-viewer/issues"
+  },
+  "homepage": "https://github.com/m-plus/cordova-pdf-viewer#readme"
+}
