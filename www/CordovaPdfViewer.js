@@ -34,7 +34,7 @@ exports.show = function(_viewerId, src, _title, success, error) {
 
     viewerId = _viewerId;
     documentSrc = src;
-    documentTitle = _title;
+    documentTitle = _title + '.pdf';
     var extension = src.split('.').pop();
 
     console.log('Source ' + src);
