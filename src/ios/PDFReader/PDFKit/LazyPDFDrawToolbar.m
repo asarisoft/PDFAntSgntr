@@ -46,6 +46,7 @@
 @synthesize squareButton;
 @synthesize circleButton;
 @synthesize circleFillButton;
+@synthesize imageButton;
 @synthesize eraserButton;
 @synthesize colorButton;
 @synthesize undoButton;
@@ -175,6 +176,19 @@
         [self addSubview:circleFillButton]; leftButtonY += (iconButtonHeight + buttonSpacing);
         titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
         
+        //Image Button
+        imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        imageButton.frame = CGRectMake(BUTTON_X, leftButtonY, BUTTON_WIDTH, iconButtonHeight);
+        [imageButton setImage:[UIImage imageNamed:@"image-but" inBundle:currentBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+        [imageButton addTarget:self action:@selector(drawButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [imageButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+        [imageButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+        imageButton.autoresizingMask = UIViewAutoresizingNone;
+        imageButton.exclusiveTouch = YES;
+        imageButton.tag = 8;
+        [self addSubview:imageButton]; leftButtonY += (iconButtonHeight + buttonSpacing);
+        titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
+
         //Eraser Button
         eraserButton = [UIButton buttonWithType:UIButtonTypeCustom];
         eraserButton.frame = CGRectMake(BUTTON_X, leftButtonY, BUTTON_WIDTH, iconButtonHeight);
@@ -184,7 +198,7 @@
         [eraserButton setBackgroundImage:buttonN forState:UIControlStateNormal];
         eraserButton.autoresizingMask = UIViewAutoresizingNone;
         eraserButton.exclusiveTouch = YES;
-        eraserButton.tag = 8;
+        eraserButton.tag = 9;
         [self addSubview:eraserButton]; leftButtonY += (iconButtonHeight + buttonSpacing);
         titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
         
@@ -197,7 +211,7 @@
         [colorButton setBackgroundImage:buttonN forState:UIControlStateNormal];
         colorButton.autoresizingMask = UIViewAutoresizingNone;
         colorButton.exclusiveTouch = YES;
-        colorButton.tag = 9;
+        colorButton.tag = 10;
         [self addSubview:colorButton]; leftButtonY += (iconButtonHeight + buttonSpacing);
         titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
         
@@ -211,7 +225,7 @@
         [undoButton setBackgroundImage:buttonN forState:UIControlStateNormal];
         undoButton.autoresizingMask = UIViewAutoresizingNone;
         undoButton.exclusiveTouch = YES;
-        undoButton.tag = 10;
+        undoButton.tag = 11;
         [self addSubview:undoButton]; leftButtonY += (iconButtonHeight + buttonSpacing);
         titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
         
@@ -224,7 +238,7 @@
         [redoButton setBackgroundImage:buttonN forState:UIControlStateNormal];
         redoButton.autoresizingMask = UIViewAutoresizingNone;
         redoButton.exclusiveTouch = YES;
-        redoButton.tag = 11;
+        redoButton.tag = 12;
         [self addSubview:redoButton]; leftButtonY += (iconButtonHeight + buttonSpacing);
         titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
         
@@ -237,11 +251,11 @@
         [clearButton setBackgroundImage:buttonN forState:UIControlStateNormal];
         clearButton.autoresizingMask = UIViewAutoresizingNone;
         clearButton.exclusiveTouch = YES;
-        clearButton.tag = 12;
+        clearButton.tag = 13;
         [self addSubview:clearButton]; //leftButtonY += (iconButtonHeight + buttonSpacing);
         //titleY += (iconButtonHeight + buttonSpacing); titleHeight -= (iconButtonHeight + buttonSpacing);
         
-        [self clearButtonSelection:12];
+        [self clearButtonSelection:13];
     }
     
     return self;
@@ -333,6 +347,8 @@
         redoButton.backgroundColor = [UIColor clearColor];
     if(upto>=clearButton.tag)
         clearButton.backgroundColor = [UIColor clearColor];
+    if(upto>=imageButton.tag)
+        imageButton.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - UIButton action methods

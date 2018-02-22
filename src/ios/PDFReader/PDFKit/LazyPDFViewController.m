@@ -41,9 +41,10 @@
 #import "LazyPDFMainPagebar.h"
 #import "LazyPDFDrawToolbar.h"
 #import "LazyPDFDataManager.h"
+#import "SPUserResizableView.h"
 
 
-@interface LazyPDFViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate,
+@interface LazyPDFViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate,
 LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelegate, ThumbsViewControllerDelegate,LazyPDFDrawingViewDelegate,LazyPDFPopoverControllerDelegate,LazyPDFDrawToolbarDelegate>
 {
     LazyPDFPropertyController *lazyPropertyController;
@@ -93,7 +94,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 
 #define TOOLBAR_HEIGHT 44.0f
 #define PAGEBAR_HEIGHT 48.0f
-#define DRAWBAR_HEIGHT 400.0f
+#define DRAWBAR_HEIGHT 430.0f
 #define DRAWBAR_WIDTH 44.0f
 
 #define SCROLLVIEW_OUTSET_SMALL 4.0f
@@ -643,12 +644,13 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
                         }
                     }
                     
-                    if ([[UIApplication sharedApplication] openURL:url] == NO)
-                    {
+                    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                        if (!success) {
 #ifdef DEBUG
-                        NSLog(@"%s '%@'", __FUNCTION__, url); // Bad or unknown URL
+                            NSLog(@"%s '%@'", __FUNCTION__, url); // Bad or unknown URL
 #endif
-                    }
+                        }
+                    }];
                 }
                 else // Not a URL, so check for another possible object type
                 {
@@ -873,7 +875,6 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
             
             printInteraction.printInfo = printInfo;
             printInteraction.printingItem = fileURL;
-            printInteraction.showsPageRange = YES;
             
             if (userInterfaceIdiom == UIUserInterfaceIdiomPad) // Large device printing
             {
@@ -1041,7 +1042,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 //- (IBAction)drawMode:(id)sender {
 - (void)tappedInToolbar:(LazyPDFMainToolbar *)toolbar drawButton:(UIButton *)button
 {
-    if (button.tag==9) {
+    if (button.tag==10) {
         [self openProperty:button];
     }else{
         [theScrollView setScrollEnabled:NO];
@@ -1056,7 +1057,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
                     subview2.userInteractionEnabled = YES;
                     LazyPDFContentPage *contentPage = (LazyPDFContentPage *)subview2;
                     [contentPage hideDrawingView];
-                    if (self.drawingView==nil && button.tag<=8){
+                    if (self.drawingView==nil && button.tag<=9){
                         //only edit mode buttons till circle fill
                         self.drawingView = [[LazyPDFDrawingView alloc] initWithFrame:contentPage.frame];
                         UIImage *drawingImage = [contentPage getDrawingImage];
@@ -1064,15 +1065,15 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
                             [self.drawingView loadImage:drawingImage];
                         }
                     }else{
-                        if ((button.tag==1 && self.drawingView.drawTool == LazyPDFDrawingToolTypePen) || (button.tag==2 && self.drawingView.drawTool == LazyPDFDrawingToolTypeText) || (button.tag==3 && self.drawingView.drawTool == LazyPDFDrawingToolTypeRectagleFill) || (button.tag==4 && self.drawingView.drawTool == LazyPDFDrawingToolTypeLine) || (button.tag==5 && self.drawingView.drawTool == LazyPDFDrawingToolTypeRectagleStroke) || (button.tag==6 && self.drawingView.drawTool == LazyPDFDrawingToolTypeEllipseStroke) || (button.tag==7 && self.drawingView.drawTool == LazyPDFDrawingToolTypeEllipseFill) || (button.tag==8 && self.drawingView.drawTool == LazyPDFDrawingToolTypeEraser)) {
+                        if ((button.tag==1 && self.drawingView.drawTool == LazyPDFDrawingToolTypePen) || (button.tag==2 && self.drawingView.drawTool == LazyPDFDrawingToolTypeText) || (button.tag==3 && self.drawingView.drawTool == LazyPDFDrawingToolTypeRectagleFill) || (button.tag==4 && self.drawingView.drawTool == LazyPDFDrawingToolTypeLine) || (button.tag==5 && self.drawingView.drawTool == LazyPDFDrawingToolTypeRectagleStroke) || (button.tag==6 && self.drawingView.drawTool == LazyPDFDrawingToolTypeEllipseStroke) || (button.tag==7 && self.drawingView.drawTool == LazyPDFDrawingToolTypeEllipseFill) || (button.tag==9 && self.drawingView.drawTool == LazyPDFDrawingToolTypeEraser)) {
                             [self saveAnnotation];
                         }
                     }
-                    if (button.tag<=8)
-                        [drawToolbar clearButtonSelection:8]; // clear upto eraser button
+                    if (button.tag<=9)
+                        [drawToolbar clearButtonSelection:9]; // clear upto eraser button
                     if (self.drawingView!=nil){
                         self.drawingView.delegate = self;
-                        if (button.tag<=8) {
+                        if (button.tag<=9) {
                             //only edit mode buttons till eraser
                             button.backgroundColor = [UIColor colorWithRed:0.49 green:0.78 blue:0.95 alpha:1.0];
                         }
@@ -1110,24 +1111,28 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
                                 self.drawingView.drawTool = LazyPDFDrawingToolTypeEllipseFill;
                                 break;
                             case 8:
+                                //image button
+                                [self openImagePicker:button];
+                                break;
+                            case 9:
                                 //eraser button
                                 self.drawingView.drawTool = LazyPDFDrawingToolTypeEraser;
                                 break;
-                            case 9:
+                            case 10:
                                 //color button
                                 //[self openProperty:button];
                                 break;
-                            case 10:
+                            case 11:
                                 //undo button
                                 [self.drawingView undoLatestStep];
                                 [self updateButtonStatus];
                                 break;
-                            case 11:
+                            case 12:
                                 //redo button
                                 [self.drawingView redoLatestStep];
                                 [self updateButtonStatus];
                                 break;
-                            case 12:
+                            case 13:
                                 //clear button
                                 [self.drawingView clear];
                                 [self updateButtonStatus];
@@ -1149,7 +1154,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 }
 - (void)saveAnnotation
 {
-    [drawToolbar clearButtonSelection:8];
+    [drawToolbar clearButtonSelection:9];
     
     LazyPDFContentView *theDrawView = (LazyPDFContentView *)[contentViews objectForKey:[NSNumber numberWithInteger:currentPage]];
     [theDrawView setScrollEnabled:YES];
@@ -1222,6 +1227,34 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     lazyPropertyController.popover = popover;
     [popover presentPopoverFromView:button];
 }
+- (void)openImagePicker:(UIButton *)button
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = NO;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:^{
+        button.backgroundColor = [UIColor clearColor];
+    }];
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    
+    CGRect frame = CGRectMake(50, 50, 200, 150);
+    SPUserResizableView *userResizableView = [[SPUserResizableView alloc] initWithFrame:frame];
+    UIImageView *contentView = [[UIImageView alloc] initWithFrame:frame];
+    contentView.image = chosenImage;
+    userResizableView.contentView = contentView;
+    [self.drawingView addSubview:userResizableView];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - LazyPDFDrawing View Delegate
 - (void)drawingView:(LazyPDFDrawingView *)view didEndDrawUsingTool:(id<LazyPDFDrawingTool>)tool;
 {

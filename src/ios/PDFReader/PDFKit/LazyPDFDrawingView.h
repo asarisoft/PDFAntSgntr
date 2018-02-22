@@ -35,6 +35,7 @@ typedef enum {
     LazyPDFDrawingToolTypeEllipseStroke,
     LazyPDFDrawingToolTypeEllipseFill,
     LazyPDFDrawingToolTypeEraser,
+    LazyPDFDrawingToolTypeImage,
     LazyPDFDrawingToolTypeText
 } LazyPDFDrawingToolType;
 

@@ -368,3 +368,44 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 }
 
 @end
+
+
+#pragma mark - LazyPDFDrawingImageTool
+
+@interface LazyPDFDrawingImageTool ()
+@property (nonatomic, assign) CGPoint firstPoint;
+@property (nonatomic, assign) CGPoint lastPoint;
+@end
+
+#pragma mark -
+
+@implementation LazyPDFDrawingImageTool
+
+@synthesize lineColor = _lineColor;
+@synthesize lineAlpha = _lineAlpha;
+@synthesize lineWidth = _lineWidth;
+
+- (void)setInitialPoint:(CGPoint)firstPoint
+{
+    self.firstPoint = firstPoint;
+}
+
+- (void)moveFromPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint
+{
+    self.lastPoint = endPoint;
+}
+
+- (void)draw
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    
+    // CGContextAddPath(context, path);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineWidth(context, self.lineWidth);
+    CGContextSetBlendMode(context, kCGBlendModeClear);
+    CGContextStrokePath(context);
+    CGContextRestoreGState(context);
+}
+
+@end

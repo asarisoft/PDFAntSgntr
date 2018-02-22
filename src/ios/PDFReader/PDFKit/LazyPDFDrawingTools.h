@@ -95,3 +95,11 @@
 @property (nonatomic, assign) BOOL fill;
 
 @end
+
+#pragma mark -
+
+@interface LazyPDFDrawingImageTool : NSObject<LazyPDFDrawingTool>
+
+@property (strong, nonatomic) UIImage *imageData;
+
+@end

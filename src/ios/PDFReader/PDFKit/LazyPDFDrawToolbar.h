@@ -31,6 +31,7 @@
 @property (nonatomic,strong) UIButton *squareButton;
 @property (nonatomic,strong) UIButton *circleButton;
 @property (nonatomic,strong) UIButton *circleFillButton;
+@property (nonatomic,strong) UIButton *imageButton;
 @property (nonatomic,strong) UIButton *eraserButton;
 @property (nonatomic,strong) UIButton *colorButton;
 @property (nonatomic,strong) UIButton *undoButton;

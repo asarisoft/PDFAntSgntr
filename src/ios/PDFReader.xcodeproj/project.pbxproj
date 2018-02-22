@@ -13,39 +13,61 @@
 		0020A94E203BC2980088829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0020A94D203BC2980088829F /* Assets.xcassets */; };
 		0020A951203BC2980088829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0020A94F203BC2980088829F /* LaunchScreen.storyboard */; };
 		0020A954203BC2980088829F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020A953203BC2980088829F /* main.m */; };
+		0026DF8D203DCB32001A6971 /* circle-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF5E203DCB31001A6971 /* circle-but.png */; };
+		0026DF8E203DCB32001A6971 /* circle-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF5F203DCB31001A6971 /* circle-but@2x.png */; };
+		0026DF8F203DCB32001A6971 /* circlefill-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF60203DCB31001A6971 /* circlefill-but.png */; };
+		0026DF90203DCB32001A6971 /* circlefill-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF61203DCB31001A6971 /* circlefill-but@2x.png */; };
+		0026DF91203DCB32001A6971 /* clear-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF62203DCB31001A6971 /* clear-but.png */; };
+		0026DF92203DCB32001A6971 /* clear-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF63203DCB31001A6971 /* clear-but@2x.png */; };
+		0026DF93203DCB32001A6971 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF64203DCB31001A6971 /* Default-568h@2x.png */; };
+		0026DF94203DCB32001A6971 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF65203DCB31001A6971 /* Default-667h@2x.png */; };
+		0026DF95203DCB32001A6971 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF66203DCB31001A6971 /* Default-736h@3x.png */; };
+		0026DF96203DCB32001A6971 /* done-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF67203DCB31001A6971 /* done-but.png */; };
+		0026DF97203DCB32001A6971 /* done-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF68203DCB31001A6971 /* done-but@2x.png */; };
+		0026DF98203DCB32001A6971 /* eraser-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF69203DCB31001A6971 /* eraser-but.png */; };
+		0026DF99203DCB32001A6971 /* eraser-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF6A203DCB31001A6971 /* eraser-but@2x.png */; };
+		0026DF9A203DCB32001A6971 /* LazyPDF-Button-H.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF6B203DCB31001A6971 /* LazyPDF-Button-H.png */; };
+		0026DF9B203DCB32001A6971 /* LazyPDF-Button-H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF6C203DCB31001A6971 /* LazyPDF-Button-H@2x.png */; };
+		0026DF9C203DCB32001A6971 /* LazyPDF-Button-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF6D203DCB31001A6971 /* LazyPDF-Button-N.png */; };
+		0026DF9D203DCB32001A6971 /* LazyPDF-Button-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF6E203DCB31001A6971 /* LazyPDF-Button-N@2x.png */; };
+		0026DF9E203DCB32001A6971 /* LazyPDF-Email.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF6F203DCB31001A6971 /* LazyPDF-Email.png */; };
+		0026DF9F203DCB32001A6971 /* LazyPDF-Email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF70203DCB31001A6971 /* LazyPDF-Email@2x.png */; };
+		0026DFA0203DCB32001A6971 /* LazyPDF-Export.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF71203DCB31001A6971 /* LazyPDF-Export.png */; };
+		0026DFA1203DCB32001A6971 /* LazyPDF-Export@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF72203DCB31001A6971 /* LazyPDF-Export@2x.png */; };
+		0026DFA2203DCB32001A6971 /* LazyPDF-Mark-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF73203DCB31001A6971 /* LazyPDF-Mark-N.png */; };
+		0026DFA3203DCB32001A6971 /* LazyPDF-Mark-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF74203DCB31001A6971 /* LazyPDF-Mark-N@2x.png */; };
+		0026DFA4203DCB32001A6971 /* LazyPDF-Mark-Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF75203DCB31001A6971 /* LazyPDF-Mark-Y.png */; };
+		0026DFA5203DCB32001A6971 /* LazyPDF-Mark-Y@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF76203DCB31001A6971 /* LazyPDF-Mark-Y@2x.png */; };
+		0026DFA6203DCB32001A6971 /* LazyPDF-Print.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF77203DCB31001A6971 /* LazyPDF-Print.png */; };
+		0026DFA7203DCB32001A6971 /* LazyPDF-Print@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF78203DCB31001A6971 /* LazyPDF-Print@2x.png */; };
+		0026DFA8203DCB32001A6971 /* LazyPDF-Thumbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF79203DCB31001A6971 /* LazyPDF-Thumbs.png */; };
+		0026DFA9203DCB32001A6971 /* LazyPDF-Thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF7A203DCB31001A6971 /* LazyPDF-Thumbs@2x.png */; };
+		0026DFAA203DCB32001A6971 /* line-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF7B203DCB31001A6971 /* line-but.png */; };
+		0026DFAB203DCB32001A6971 /* line-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF7C203DCB31001A6971 /* line-but@2x.png */; };
+		0026DFAC203DCB32001A6971 /* pen-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF7D203DCB31001A6971 /* pen-but.png */; };
+		0026DFAD203DCB32001A6971 /* pen-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF7E203DCB31001A6971 /* pen-but@2x.png */; };
+		0026DFAE203DCB32001A6971 /* Pen-Button-Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF7F203DCB31001A6971 /* Pen-Button-Y.png */; };
+		0026DFAF203DCB32001A6971 /* Pen-Button-Y@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF80203DCB31001A6971 /* Pen-Button-Y@2x.png */; };
+		0026DFB0203DCB32001A6971 /* Pen-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF81203DCB31001A6971 /* Pen-Button.png */; };
+		0026DFB1203DCB32001A6971 /* Pen-Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF82203DCB31001A6971 /* Pen-Button@2x.png */; };
+		0026DFB2203DCB32001A6971 /* redo-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF83203DCB31001A6971 /* redo-but.png */; };
+		0026DFB3203DCB32001A6971 /* redo-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF84203DCB31001A6971 /* redo-but@2x.png */; };
+		0026DFB4203DCB32001A6971 /* square-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF85203DCB31001A6971 /* square-but.png */; };
+		0026DFB5203DCB32001A6971 /* square-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF86203DCB31001A6971 /* square-but@2x.png */; };
+		0026DFB6203DCB32001A6971 /* squarefill-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF87203DCB31001A6971 /* squarefill-but.png */; };
+		0026DFB7203DCB32001A6971 /* squarefill-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF88203DCB31001A6971 /* squarefill-but@2x.png */; };
+		0026DFB8203DCB32001A6971 /* text-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF89203DCB31001A6971 /* text-but.png */; };
+		0026DFB9203DCB32001A6971 /* text-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF8A203DCB31001A6971 /* text-but@2x.png */; };
+		0026DFBA203DCB32001A6971 /* undo-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF8B203DCB31001A6971 /* undo-but.png */; };
+		0026DFBB203DCB32001A6971 /* undo-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DF8C203DCB31001A6971 /* undo-but@2x.png */; };
+		0026DFBD203DCB42001A6971 /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0026DFBC203DCB41001A6971 /* Reader.pdf */; };
+		0026DFC0203E274E001A6971 /* image-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DFBE203E274D001A6971 /* image-but.png */; };
+		0026DFC1203E274E001A6971 /* image-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DFBF203E274E001A6971 /* image-but@2x.png */; };
+		0026DFC4203E3EC9001A6971 /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026DFC2203E3EC8001A6971 /* SPUserResizableView.m */; };
 		003A13E9203BEE3F00D66FF8 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A1369203BEE3F00D66FF8 /* Annotation.m */; };
 		003A13EA203BEE3F00D66FF8 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A136C203BEE3F00D66FF8 /* CGPDFDocument.m */; };
-		003A13EB203BEE3F00D66FF8 /* circle-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A136D203BEE3F00D66FF8 /* circle-but.png */; };
-		003A13EC203BEE3F00D66FF8 /* circle-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A136E203BEE3F00D66FF8 /* circle-but@2x.png */; };
-		003A13ED203BEE3F00D66FF8 /* circlefill-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A136F203BEE3F00D66FF8 /* circlefill-but.png */; };
-		003A13EE203BEE3F00D66FF8 /* circlefill-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1370203BEE3F00D66FF8 /* circlefill-but@2x.png */; };
-		003A13EF203BEE3F00D66FF8 /* clear-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1371203BEE3F00D66FF8 /* clear-but.png */; };
-		003A13F0203BEE3F00D66FF8 /* clear-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1372203BEE3F00D66FF8 /* clear-but@2x.png */; };
-		003A13F1203BEE3F00D66FF8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1373203BEE3F00D66FF8 /* Default-568h@2x.png */; };
-		003A13F2203BEE3F00D66FF8 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1374203BEE3F00D66FF8 /* Default-667h@2x.png */; };
-		003A13F3203BEE3F00D66FF8 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1375203BEE3F00D66FF8 /* Default-736h@3x.png */; };
-		003A13F4203BEE3F00D66FF8 /* done-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1376203BEE3F00D66FF8 /* done-but.png */; };
-		003A13F5203BEE3F00D66FF8 /* done-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1377203BEE3F00D66FF8 /* done-but@2x.png */; };
-		003A13F6203BEE3F00D66FF8 /* eraser-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1378203BEE3F00D66FF8 /* eraser-but.png */; };
-		003A13F7203BEE3F00D66FF8 /* eraser-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1379203BEE3F00D66FF8 /* eraser-but@2x.png */; };
 		003A13F8203BEE3F00D66FF8 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A137B203BEE3F00D66FF8 /* File.m */; };
 		003A13F9203BEE3F00D66FF8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 003A137C203BEE3F00D66FF8 /* Info.plist */; };
-		003A13FA203BEE3F00D66FF8 /* LazyPDF-Button-H.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A137D203BEE3F00D66FF8 /* LazyPDF-Button-H.png */; };
-		003A13FB203BEE3F00D66FF8 /* LazyPDF-Button-H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A137E203BEE3F00D66FF8 /* LazyPDF-Button-H@2x.png */; };
-		003A13FC203BEE3F00D66FF8 /* LazyPDF-Button-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A137F203BEE3F00D66FF8 /* LazyPDF-Button-N.png */; };
-		003A13FD203BEE3F00D66FF8 /* LazyPDF-Button-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1380203BEE3F00D66FF8 /* LazyPDF-Button-N@2x.png */; };
-		003A13FE203BEE3F00D66FF8 /* LazyPDF-Email.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1381203BEE3F00D66FF8 /* LazyPDF-Email.png */; };
-		003A13FF203BEE3F00D66FF8 /* LazyPDF-Email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1382203BEE3F00D66FF8 /* LazyPDF-Email@2x.png */; };
-		003A1400203BEE3F00D66FF8 /* LazyPDF-Export.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1383203BEE3F00D66FF8 /* LazyPDF-Export.png */; };
-		003A1401203BEE3F00D66FF8 /* LazyPDF-Export@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1384203BEE3F00D66FF8 /* LazyPDF-Export@2x.png */; };
-		003A1402203BEE4000D66FF8 /* LazyPDF-Mark-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1385203BEE3F00D66FF8 /* LazyPDF-Mark-N.png */; };
-		003A1403203BEE4000D66FF8 /* LazyPDF-Mark-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1386203BEE3F00D66FF8 /* LazyPDF-Mark-N@2x.png */; };
-		003A1404203BEE4000D66FF8 /* LazyPDF-Mark-Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1387203BEE3F00D66FF8 /* LazyPDF-Mark-Y.png */; };
-		003A1405203BEE4000D66FF8 /* LazyPDF-Mark-Y@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1388203BEE3F00D66FF8 /* LazyPDF-Mark-Y@2x.png */; };
-		003A1406203BEE4000D66FF8 /* LazyPDF-Print.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A1389203BEE3F00D66FF8 /* LazyPDF-Print.png */; };
-		003A1407203BEE4000D66FF8 /* LazyPDF-Print@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A138A203BEE3F00D66FF8 /* LazyPDF-Print@2x.png */; };
-		003A1408203BEE4000D66FF8 /* LazyPDF-Thumbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A138B203BEE3F00D66FF8 /* LazyPDF-Thumbs.png */; };
-		003A1409203BEE4000D66FF8 /* LazyPDF-Thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A138C203BEE3F00D66FF8 /* LazyPDF-Thumbs@2x.png */; };
 		003A140A203BEE4000D66FF8 /* LazyPDFColorBarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A138E203BEE3F00D66FF8 /* LazyPDFColorBarPicker.m */; };
 		003A140B203BEE4000D66FF8 /* LazyPDFColorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A1390203BEE3F00D66FF8 /* LazyPDFColorIndicatorView.m */; };
 		003A140C203BEE4000D66FF8 /* LazyPDFColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A1393203BEE3F00D66FF8 /* LazyPDFColorPickerController.m */; };
@@ -79,29 +101,10 @@
 		003A1428203BEE4000D66FF8 /* LazyPDFThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13CB203BEE3F00D66FF8 /* LazyPDFThumbView.m */; };
 		003A1429203BEE4000D66FF8 /* LazyPDFTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13CD203BEE3F00D66FF8 /* LazyPDFTouchView.m */; };
 		003A142A203BEE4000D66FF8 /* LazyPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13CF203BEE3F00D66FF8 /* LazyPDFViewController.m */; };
-		003A142B203BEE4000D66FF8 /* line-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D0203BEE3F00D66FF8 /* line-but.png */; };
-		003A142C203BEE4000D66FF8 /* line-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D1203BEE3F00D66FF8 /* line-but@2x.png */; };
-		003A142D203BEE4000D66FF8 /* pen-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D2203BEE3F00D66FF8 /* pen-but.png */; };
-		003A142E203BEE4000D66FF8 /* pen-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D3203BEE3F00D66FF8 /* pen-but@2x.png */; };
-		003A142F203BEE4000D66FF8 /* Pen-Button-Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D4203BEE3F00D66FF8 /* Pen-Button-Y.png */; };
-		003A1430203BEE4000D66FF8 /* Pen-Button-Y@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D5203BEE3F00D66FF8 /* Pen-Button-Y@2x.png */; };
-		003A1431203BEE4000D66FF8 /* Pen-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D6203BEE3F00D66FF8 /* Pen-Button.png */; };
-		003A1432203BEE4000D66FF8 /* Pen-Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D7203BEE3F00D66FF8 /* Pen-Button@2x.png */; };
-		003A1433203BEE4000D66FF8 /* redo-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D8203BEE3F00D66FF8 /* redo-but.png */; };
-		003A1434203BEE4000D66FF8 /* redo-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13D9203BEE3F00D66FF8 /* redo-but@2x.png */; };
-		003A1435203BEE4000D66FF8 /* square-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13DA203BEE3F00D66FF8 /* square-but.png */; };
-		003A1436203BEE4000D66FF8 /* square-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13DB203BEE3F00D66FF8 /* square-but@2x.png */; };
-		003A1437203BEE4000D66FF8 /* squarefill-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13DC203BEE3F00D66FF8 /* squarefill-but.png */; };
-		003A1438203BEE4000D66FF8 /* squarefill-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13DD203BEE3F00D66FF8 /* squarefill-but@2x.png */; };
-		003A1439203BEE4000D66FF8 /* text-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13DE203BEE3F00D66FF8 /* text-but.png */; };
-		003A143A203BEE4000D66FF8 /* text-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13DF203BEE3F00D66FF8 /* text-but@2x.png */; };
 		003A143B203BEE4000D66FF8 /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13E1203BEE3F00D66FF8 /* ThumbsMainToolbar.m */; };
 		003A143C203BEE4000D66FF8 /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13E3203BEE3F00D66FF8 /* ThumbsViewController.m */; };
 		003A143D203BEE4000D66FF8 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13E5203BEE3F00D66FF8 /* UIXToolbarView.m */; };
-		003A143E203BEE4000D66FF8 /* undo-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13E6203BEE3F00D66FF8 /* undo-but.png */; };
-		003A143F203BEE4000D66FF8 /* undo-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A13E7203BEE3F00D66FF8 /* undo-but@2x.png */; };
 		003A1440203BEE4000D66FF8 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 003A13E8203BEE3F00D66FF8 /* VERSION */; };
-		003A1442203C042300D66FF8 /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 003A1441203C042300D66FF8 /* Reader.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,43 +118,66 @@
 		0020A950203BC2980088829F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0020A952203BC2980088829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0020A953203BC2980088829F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0026DF5E203DCB31001A6971 /* circle-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-but.png"; sourceTree = "<group>"; };
+		0026DF5F203DCB31001A6971 /* circle-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-but@2x.png"; sourceTree = "<group>"; };
+		0026DF60203DCB31001A6971 /* circlefill-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circlefill-but.png"; sourceTree = "<group>"; };
+		0026DF61203DCB31001A6971 /* circlefill-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circlefill-but@2x.png"; sourceTree = "<group>"; };
+		0026DF62203DCB31001A6971 /* clear-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-but.png"; sourceTree = "<group>"; };
+		0026DF63203DCB31001A6971 /* clear-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-but@2x.png"; sourceTree = "<group>"; };
+		0026DF64203DCB31001A6971 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0026DF65203DCB31001A6971 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		0026DF66203DCB31001A6971 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
+		0026DF67203DCB31001A6971 /* done-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-but.png"; sourceTree = "<group>"; };
+		0026DF68203DCB31001A6971 /* done-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-but@2x.png"; sourceTree = "<group>"; };
+		0026DF69203DCB31001A6971 /* eraser-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-but.png"; sourceTree = "<group>"; };
+		0026DF6A203DCB31001A6971 /* eraser-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-but@2x.png"; sourceTree = "<group>"; };
+		0026DF6B203DCB31001A6971 /* LazyPDF-Button-H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-H.png"; sourceTree = "<group>"; };
+		0026DF6C203DCB31001A6971 /* LazyPDF-Button-H@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-H@2x.png"; sourceTree = "<group>"; };
+		0026DF6D203DCB31001A6971 /* LazyPDF-Button-N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-N.png"; sourceTree = "<group>"; };
+		0026DF6E203DCB31001A6971 /* LazyPDF-Button-N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-N@2x.png"; sourceTree = "<group>"; };
+		0026DF6F203DCB31001A6971 /* LazyPDF-Email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Email.png"; sourceTree = "<group>"; };
+		0026DF70203DCB31001A6971 /* LazyPDF-Email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Email@2x.png"; sourceTree = "<group>"; };
+		0026DF71203DCB31001A6971 /* LazyPDF-Export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Export.png"; sourceTree = "<group>"; };
+		0026DF72203DCB31001A6971 /* LazyPDF-Export@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Export@2x.png"; sourceTree = "<group>"; };
+		0026DF73203DCB31001A6971 /* LazyPDF-Mark-N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-N.png"; sourceTree = "<group>"; };
+		0026DF74203DCB31001A6971 /* LazyPDF-Mark-N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-N@2x.png"; sourceTree = "<group>"; };
+		0026DF75203DCB31001A6971 /* LazyPDF-Mark-Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-Y.png"; sourceTree = "<group>"; };
+		0026DF76203DCB31001A6971 /* LazyPDF-Mark-Y@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-Y@2x.png"; sourceTree = "<group>"; };
+		0026DF77203DCB31001A6971 /* LazyPDF-Print.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Print.png"; sourceTree = "<group>"; };
+		0026DF78203DCB31001A6971 /* LazyPDF-Print@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Print@2x.png"; sourceTree = "<group>"; };
+		0026DF79203DCB31001A6971 /* LazyPDF-Thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Thumbs.png"; sourceTree = "<group>"; };
+		0026DF7A203DCB31001A6971 /* LazyPDF-Thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Thumbs@2x.png"; sourceTree = "<group>"; };
+		0026DF7B203DCB31001A6971 /* line-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line-but.png"; sourceTree = "<group>"; };
+		0026DF7C203DCB31001A6971 /* line-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line-but@2x.png"; sourceTree = "<group>"; };
+		0026DF7D203DCB31001A6971 /* pen-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-but.png"; sourceTree = "<group>"; };
+		0026DF7E203DCB31001A6971 /* pen-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-but@2x.png"; sourceTree = "<group>"; };
+		0026DF7F203DCB31001A6971 /* Pen-Button-Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button-Y.png"; sourceTree = "<group>"; };
+		0026DF80203DCB31001A6971 /* Pen-Button-Y@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button-Y@2x.png"; sourceTree = "<group>"; };
+		0026DF81203DCB31001A6971 /* Pen-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button.png"; sourceTree = "<group>"; };
+		0026DF82203DCB31001A6971 /* Pen-Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button@2x.png"; sourceTree = "<group>"; };
+		0026DF83203DCB31001A6971 /* redo-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redo-but.png"; sourceTree = "<group>"; };
+		0026DF84203DCB31001A6971 /* redo-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redo-but@2x.png"; sourceTree = "<group>"; };
+		0026DF85203DCB31001A6971 /* square-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-but.png"; sourceTree = "<group>"; };
+		0026DF86203DCB31001A6971 /* square-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-but@2x.png"; sourceTree = "<group>"; };
+		0026DF87203DCB31001A6971 /* squarefill-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "squarefill-but.png"; sourceTree = "<group>"; };
+		0026DF88203DCB31001A6971 /* squarefill-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "squarefill-but@2x.png"; sourceTree = "<group>"; };
+		0026DF89203DCB31001A6971 /* text-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-but.png"; sourceTree = "<group>"; };
+		0026DF8A203DCB31001A6971 /* text-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-but@2x.png"; sourceTree = "<group>"; };
+		0026DF8B203DCB31001A6971 /* undo-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-but.png"; sourceTree = "<group>"; };
+		0026DF8C203DCB31001A6971 /* undo-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-but@2x.png"; sourceTree = "<group>"; };
+		0026DFBC203DCB41001A6971 /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
+		0026DFBE203E274D001A6971 /* image-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-but.png"; sourceTree = "<group>"; };
+		0026DFBF203E274E001A6971 /* image-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-but@2x.png"; sourceTree = "<group>"; };
+		0026DFC2203E3EC8001A6971 /* SPUserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserResizableView.m; sourceTree = "<group>"; };
+		0026DFC3203E3EC8001A6971 /* SPUserResizableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserResizableView.h; sourceTree = "<group>"; };
 		003A1368203BEE3F00D66FF8 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		003A1369203BEE3F00D66FF8 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		003A136A203BEE3F00D66FF8 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
 		003A136B203BEE3F00D66FF8 /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDocument.h; sourceTree = "<group>"; };
 		003A136C203BEE3F00D66FF8 /* CGPDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFDocument.m; sourceTree = "<group>"; };
-		003A136D203BEE3F00D66FF8 /* circle-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-but.png"; sourceTree = "<group>"; };
-		003A136E203BEE3F00D66FF8 /* circle-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-but@2x.png"; sourceTree = "<group>"; };
-		003A136F203BEE3F00D66FF8 /* circlefill-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circlefill-but.png"; sourceTree = "<group>"; };
-		003A1370203BEE3F00D66FF8 /* circlefill-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circlefill-but@2x.png"; sourceTree = "<group>"; };
-		003A1371203BEE3F00D66FF8 /* clear-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-but.png"; sourceTree = "<group>"; };
-		003A1372203BEE3F00D66FF8 /* clear-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-but@2x.png"; sourceTree = "<group>"; };
-		003A1373203BEE3F00D66FF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		003A1374203BEE3F00D66FF8 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
-		003A1375203BEE3F00D66FF8 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
-		003A1376203BEE3F00D66FF8 /* done-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-but.png"; sourceTree = "<group>"; };
-		003A1377203BEE3F00D66FF8 /* done-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-but@2x.png"; sourceTree = "<group>"; };
-		003A1378203BEE3F00D66FF8 /* eraser-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-but.png"; sourceTree = "<group>"; };
-		003A1379203BEE3F00D66FF8 /* eraser-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-but@2x.png"; sourceTree = "<group>"; };
 		003A137A203BEE3F00D66FF8 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		003A137B203BEE3F00D66FF8 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		003A137C203BEE3F00D66FF8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		003A137D203BEE3F00D66FF8 /* LazyPDF-Button-H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-H.png"; sourceTree = "<group>"; };
-		003A137E203BEE3F00D66FF8 /* LazyPDF-Button-H@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-H@2x.png"; sourceTree = "<group>"; };
-		003A137F203BEE3F00D66FF8 /* LazyPDF-Button-N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-N.png"; sourceTree = "<group>"; };
-		003A1380203BEE3F00D66FF8 /* LazyPDF-Button-N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Button-N@2x.png"; sourceTree = "<group>"; };
-		003A1381203BEE3F00D66FF8 /* LazyPDF-Email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Email.png"; sourceTree = "<group>"; };
-		003A1382203BEE3F00D66FF8 /* LazyPDF-Email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Email@2x.png"; sourceTree = "<group>"; };
-		003A1383203BEE3F00D66FF8 /* LazyPDF-Export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Export.png"; sourceTree = "<group>"; };
-		003A1384203BEE3F00D66FF8 /* LazyPDF-Export@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Export@2x.png"; sourceTree = "<group>"; };
-		003A1385203BEE3F00D66FF8 /* LazyPDF-Mark-N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-N.png"; sourceTree = "<group>"; };
-		003A1386203BEE3F00D66FF8 /* LazyPDF-Mark-N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-N@2x.png"; sourceTree = "<group>"; };
-		003A1387203BEE3F00D66FF8 /* LazyPDF-Mark-Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-Y.png"; sourceTree = "<group>"; };
-		003A1388203BEE3F00D66FF8 /* LazyPDF-Mark-Y@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Mark-Y@2x.png"; sourceTree = "<group>"; };
-		003A1389203BEE3F00D66FF8 /* LazyPDF-Print.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Print.png"; sourceTree = "<group>"; };
-		003A138A203BEE3F00D66FF8 /* LazyPDF-Print@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Print@2x.png"; sourceTree = "<group>"; };
-		003A138B203BEE3F00D66FF8 /* LazyPDF-Thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Thumbs.png"; sourceTree = "<group>"; };
-		003A138C203BEE3F00D66FF8 /* LazyPDF-Thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LazyPDF-Thumbs@2x.png"; sourceTree = "<group>"; };
 		003A138D203BEE3F00D66FF8 /* LazyPDFColorBarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFColorBarPicker.h; sourceTree = "<group>"; };
 		003A138E203BEE3F00D66FF8 /* LazyPDFColorBarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFColorBarPicker.m; sourceTree = "<group>"; };
 		003A138F203BEE3F00D66FF8 /* LazyPDFColorIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFColorIndicatorView.h; sourceTree = "<group>"; };
@@ -218,32 +244,13 @@
 		003A13CD203BEE3F00D66FF8 /* LazyPDFTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFTouchView.m; sourceTree = "<group>"; };
 		003A13CE203BEE3F00D66FF8 /* LazyPDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFViewController.h; sourceTree = "<group>"; };
 		003A13CF203BEE3F00D66FF8 /* LazyPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFViewController.m; sourceTree = "<group>"; };
-		003A13D0203BEE3F00D66FF8 /* line-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line-but.png"; sourceTree = "<group>"; };
-		003A13D1203BEE3F00D66FF8 /* line-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line-but@2x.png"; sourceTree = "<group>"; };
-		003A13D2203BEE3F00D66FF8 /* pen-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-but.png"; sourceTree = "<group>"; };
-		003A13D3203BEE3F00D66FF8 /* pen-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen-but@2x.png"; sourceTree = "<group>"; };
-		003A13D4203BEE3F00D66FF8 /* Pen-Button-Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button-Y.png"; sourceTree = "<group>"; };
-		003A13D5203BEE3F00D66FF8 /* Pen-Button-Y@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button-Y@2x.png"; sourceTree = "<group>"; };
-		003A13D6203BEE3F00D66FF8 /* Pen-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button.png"; sourceTree = "<group>"; };
-		003A13D7203BEE3F00D66FF8 /* Pen-Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pen-Button@2x.png"; sourceTree = "<group>"; };
-		003A13D8203BEE3F00D66FF8 /* redo-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redo-but.png"; sourceTree = "<group>"; };
-		003A13D9203BEE3F00D66FF8 /* redo-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redo-but@2x.png"; sourceTree = "<group>"; };
-		003A13DA203BEE3F00D66FF8 /* square-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-but.png"; sourceTree = "<group>"; };
-		003A13DB203BEE3F00D66FF8 /* square-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-but@2x.png"; sourceTree = "<group>"; };
-		003A13DC203BEE3F00D66FF8 /* squarefill-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "squarefill-but.png"; sourceTree = "<group>"; };
-		003A13DD203BEE3F00D66FF8 /* squarefill-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "squarefill-but@2x.png"; sourceTree = "<group>"; };
-		003A13DE203BEE3F00D66FF8 /* text-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-but.png"; sourceTree = "<group>"; };
-		003A13DF203BEE3F00D66FF8 /* text-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-but@2x.png"; sourceTree = "<group>"; };
 		003A13E0203BEE3F00D66FF8 /* ThumbsMainToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbsMainToolbar.h; sourceTree = "<group>"; };
 		003A13E1203BEE3F00D66FF8 /* ThumbsMainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsMainToolbar.m; sourceTree = "<group>"; };
 		003A13E2203BEE3F00D66FF8 /* ThumbsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbsViewController.h; sourceTree = "<group>"; };
 		003A13E3203BEE3F00D66FF8 /* ThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsViewController.m; sourceTree = "<group>"; };
 		003A13E4203BEE3F00D66FF8 /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIXToolbarView.h; sourceTree = "<group>"; };
 		003A13E5203BEE3F00D66FF8 /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIXToolbarView.m; sourceTree = "<group>"; };
-		003A13E6203BEE3F00D66FF8 /* undo-but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-but.png"; sourceTree = "<group>"; };
-		003A13E7203BEE3F00D66FF8 /* undo-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-but@2x.png"; sourceTree = "<group>"; };
 		003A13E8203BEE3F00D66FF8 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
-		003A1441203C042300D66FF8 /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,52 +292,81 @@
 				0020A94F203BC2980088829F /* LaunchScreen.storyboard */,
 				0020A952203BC2980088829F /* Info.plist */,
 				0020A953203BC2980088829F /* main.m */,
-				003A1441203C042300D66FF8 /* Reader.pdf */,
 				003A1367203BEE3F00D66FF8 /* PDFKit */,
 			);
 			path = PDFReader;
 			sourceTree = "<group>";
 		};
+		0026DF5D203DCB31001A6971 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0026DF5E203DCB31001A6971 /* circle-but.png */,
+				0026DF5F203DCB31001A6971 /* circle-but@2x.png */,
+				0026DF60203DCB31001A6971 /* circlefill-but.png */,
+				0026DF61203DCB31001A6971 /* circlefill-but@2x.png */,
+				0026DF62203DCB31001A6971 /* clear-but.png */,
+				0026DF63203DCB31001A6971 /* clear-but@2x.png */,
+				0026DF64203DCB31001A6971 /* Default-568h@2x.png */,
+				0026DF65203DCB31001A6971 /* Default-667h@2x.png */,
+				0026DF66203DCB31001A6971 /* Default-736h@3x.png */,
+				0026DF67203DCB31001A6971 /* done-but.png */,
+				0026DF68203DCB31001A6971 /* done-but@2x.png */,
+				0026DF69203DCB31001A6971 /* eraser-but.png */,
+				0026DF6A203DCB31001A6971 /* eraser-but@2x.png */,
+				0026DFBE203E274D001A6971 /* image-but.png */,
+				0026DFBF203E274E001A6971 /* image-but@2x.png */,
+				003A13A8203BEE3F00D66FF8 /* LazyPDFDrawingTools.m */,
+				0026DF6B203DCB31001A6971 /* LazyPDF-Button-H.png */,
+				0026DF6C203DCB31001A6971 /* LazyPDF-Button-H@2x.png */,
+				0026DF6D203DCB31001A6971 /* LazyPDF-Button-N.png */,
+				0026DF6E203DCB31001A6971 /* LazyPDF-Button-N@2x.png */,
+				0026DF6F203DCB31001A6971 /* LazyPDF-Email.png */,
+				0026DF70203DCB31001A6971 /* LazyPDF-Email@2x.png */,
+				0026DF71203DCB31001A6971 /* LazyPDF-Export.png */,
+				0026DF72203DCB31001A6971 /* LazyPDF-Export@2x.png */,
+				0026DF73203DCB31001A6971 /* LazyPDF-Mark-N.png */,
+				0026DF74203DCB31001A6971 /* LazyPDF-Mark-N@2x.png */,
+				0026DF75203DCB31001A6971 /* LazyPDF-Mark-Y.png */,
+				0026DF76203DCB31001A6971 /* LazyPDF-Mark-Y@2x.png */,
+				0026DF77203DCB31001A6971 /* LazyPDF-Print.png */,
+				0026DF78203DCB31001A6971 /* LazyPDF-Print@2x.png */,
+				0026DF79203DCB31001A6971 /* LazyPDF-Thumbs.png */,
+				0026DF7A203DCB31001A6971 /* LazyPDF-Thumbs@2x.png */,
+				0026DF7B203DCB31001A6971 /* line-but.png */,
+				0026DF7C203DCB31001A6971 /* line-but@2x.png */,
+				0026DF7D203DCB31001A6971 /* pen-but.png */,
+				0026DF7E203DCB31001A6971 /* pen-but@2x.png */,
+				0026DF7F203DCB31001A6971 /* Pen-Button-Y.png */,
+				0026DF80203DCB31001A6971 /* Pen-Button-Y@2x.png */,
+				0026DF81203DCB31001A6971 /* Pen-Button.png */,
+				0026DF82203DCB31001A6971 /* Pen-Button@2x.png */,
+				0026DF83203DCB31001A6971 /* redo-but.png */,
+				0026DF84203DCB31001A6971 /* redo-but@2x.png */,
+				0026DF85203DCB31001A6971 /* square-but.png */,
+				0026DF86203DCB31001A6971 /* square-but@2x.png */,
+				0026DF87203DCB31001A6971 /* squarefill-but.png */,
+				0026DF88203DCB31001A6971 /* squarefill-but@2x.png */,
+				0026DF89203DCB31001A6971 /* text-but.png */,
+				0026DF8A203DCB31001A6971 /* text-but@2x.png */,
+				0026DF8B203DCB31001A6971 /* undo-but.png */,
+				0026DF8C203DCB31001A6971 /* undo-but@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		003A1367203BEE3F00D66FF8 /* PDFKit */ = {
 			isa = PBXGroup;
 			children = (
+				0026DFBC203DCB41001A6971 /* Reader.pdf */,
+				0026DF5D203DCB31001A6971 /* Images */,
 				003A1368203BEE3F00D66FF8 /* Annotation.h */,
 				003A1369203BEE3F00D66FF8 /* Annotation.m */,
 				003A136A203BEE3F00D66FF8 /* ARCMacros.h */,
 				003A136B203BEE3F00D66FF8 /* CGPDFDocument.h */,
 				003A136C203BEE3F00D66FF8 /* CGPDFDocument.m */,
-				003A136D203BEE3F00D66FF8 /* circle-but.png */,
-				003A136E203BEE3F00D66FF8 /* circle-but@2x.png */,
-				003A136F203BEE3F00D66FF8 /* circlefill-but.png */,
-				003A1370203BEE3F00D66FF8 /* circlefill-but@2x.png */,
-				003A1371203BEE3F00D66FF8 /* clear-but.png */,
-				003A1372203BEE3F00D66FF8 /* clear-but@2x.png */,
-				003A1373203BEE3F00D66FF8 /* Default-568h@2x.png */,
-				003A1374203BEE3F00D66FF8 /* Default-667h@2x.png */,
-				003A1375203BEE3F00D66FF8 /* Default-736h@3x.png */,
-				003A1376203BEE3F00D66FF8 /* done-but.png */,
-				003A1377203BEE3F00D66FF8 /* done-but@2x.png */,
-				003A1378203BEE3F00D66FF8 /* eraser-but.png */,
-				003A1379203BEE3F00D66FF8 /* eraser-but@2x.png */,
 				003A137A203BEE3F00D66FF8 /* File.h */,
 				003A137B203BEE3F00D66FF8 /* File.m */,
 				003A137C203BEE3F00D66FF8 /* Info.plist */,
-				003A137D203BEE3F00D66FF8 /* LazyPDF-Button-H.png */,
-				003A137E203BEE3F00D66FF8 /* LazyPDF-Button-H@2x.png */,
-				003A137F203BEE3F00D66FF8 /* LazyPDF-Button-N.png */,
-				003A1380203BEE3F00D66FF8 /* LazyPDF-Button-N@2x.png */,
-				003A1381203BEE3F00D66FF8 /* LazyPDF-Email.png */,
-				003A1382203BEE3F00D66FF8 /* LazyPDF-Email@2x.png */,
-				003A1383203BEE3F00D66FF8 /* LazyPDF-Export.png */,
-				003A1384203BEE3F00D66FF8 /* LazyPDF-Export@2x.png */,
-				003A1385203BEE3F00D66FF8 /* LazyPDF-Mark-N.png */,
-				003A1386203BEE3F00D66FF8 /* LazyPDF-Mark-N@2x.png */,
-				003A1387203BEE3F00D66FF8 /* LazyPDF-Mark-Y.png */,
-				003A1388203BEE3F00D66FF8 /* LazyPDF-Mark-Y@2x.png */,
-				003A1389203BEE3F00D66FF8 /* LazyPDF-Print.png */,
-				003A138A203BEE3F00D66FF8 /* LazyPDF-Print@2x.png */,
-				003A138B203BEE3F00D66FF8 /* LazyPDF-Thumbs.png */,
-				003A138C203BEE3F00D66FF8 /* LazyPDF-Thumbs@2x.png */,
 				003A138D203BEE3F00D66FF8 /* LazyPDFColorBarPicker.h */,
 				003A138E203BEE3F00D66FF8 /* LazyPDFColorBarPicker.m */,
 				003A138F203BEE3F00D66FF8 /* LazyPDFColorIndicatorView.h */,
@@ -358,7 +394,6 @@
 				003A13A5203BEE3F00D66FF8 /* LazyPDFDocumentOutline.h */,
 				003A13A6203BEE3F00D66FF8 /* LazyPDFDocumentOutline.m */,
 				003A13A7203BEE3F00D66FF8 /* LazyPDFDrawingTools.h */,
-				003A13A8203BEE3F00D66FF8 /* LazyPDFDrawingTools.m */,
 				003A13A9203BEE3F00D66FF8 /* LazyPDFDrawingView.h */,
 				003A13AA203BEE3F00D66FF8 /* LazyPDFDrawingView.m */,
 				003A13AB203BEE3F00D66FF8 /* LazyPDFDrawToolbar.h */,
@@ -397,30 +432,14 @@
 				003A13CD203BEE3F00D66FF8 /* LazyPDFTouchView.m */,
 				003A13CE203BEE3F00D66FF8 /* LazyPDFViewController.h */,
 				003A13CF203BEE3F00D66FF8 /* LazyPDFViewController.m */,
-				003A13D0203BEE3F00D66FF8 /* line-but.png */,
-				003A13D1203BEE3F00D66FF8 /* line-but@2x.png */,
-				003A13D2203BEE3F00D66FF8 /* pen-but.png */,
-				003A13D3203BEE3F00D66FF8 /* pen-but@2x.png */,
-				003A13D4203BEE3F00D66FF8 /* Pen-Button-Y.png */,
-				003A13D5203BEE3F00D66FF8 /* Pen-Button-Y@2x.png */,
-				003A13D6203BEE3F00D66FF8 /* Pen-Button.png */,
-				003A13D7203BEE3F00D66FF8 /* Pen-Button@2x.png */,
-				003A13D8203BEE3F00D66FF8 /* redo-but.png */,
-				003A13D9203BEE3F00D66FF8 /* redo-but@2x.png */,
-				003A13DA203BEE3F00D66FF8 /* square-but.png */,
-				003A13DB203BEE3F00D66FF8 /* square-but@2x.png */,
-				003A13DC203BEE3F00D66FF8 /* squarefill-but.png */,
-				003A13DD203BEE3F00D66FF8 /* squarefill-but@2x.png */,
-				003A13DE203BEE3F00D66FF8 /* text-but.png */,
-				003A13DF203BEE3F00D66FF8 /* text-but@2x.png */,
+				0026DFC3203E3EC8001A6971 /* SPUserResizableView.h */,
+				0026DFC2203E3EC8001A6971 /* SPUserResizableView.m */,
 				003A13E0203BEE3F00D66FF8 /* ThumbsMainToolbar.h */,
 				003A13E1203BEE3F00D66FF8 /* ThumbsMainToolbar.m */,
 				003A13E2203BEE3F00D66FF8 /* ThumbsViewController.h */,
 				003A13E3203BEE3F00D66FF8 /* ThumbsViewController.m */,
 				003A13E4203BEE3F00D66FF8 /* UIXToolbarView.h */,
 				003A13E5203BEE3F00D66FF8 /* UIXToolbarView.m */,
-				003A13E6203BEE3F00D66FF8 /* undo-but.png */,
-				003A13E7203BEE3F00D66FF8 /* undo-but@2x.png */,
 				003A13E8203BEE3F00D66FF8 /* VERSION */,
 			);
 			path = PDFKit;
@@ -484,60 +503,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003A142F203BEE4000D66FF8 /* Pen-Button-Y.png in Resources */,
-				003A13EE203BEE3F00D66FF8 /* circlefill-but@2x.png in Resources */,
-				003A1430203BEE4000D66FF8 /* Pen-Button-Y@2x.png in Resources */,
+				0026DFA0203DCB32001A6971 /* LazyPDF-Export.png in Resources */,
+				0026DF8E203DCB32001A6971 /* circle-but@2x.png in Resources */,
+				0026DFA5203DCB32001A6971 /* LazyPDF-Mark-Y@2x.png in Resources */,
+				0026DF97203DCB32001A6971 /* done-but@2x.png in Resources */,
 				0020A951203BC2980088829F /* LaunchScreen.storyboard in Resources */,
-				003A13FB203BEE3F00D66FF8 /* LazyPDF-Button-H@2x.png in Resources */,
-				003A13F4203BEE3F00D66FF8 /* done-but.png in Resources */,
-				003A1434203BEE4000D66FF8 /* redo-but@2x.png in Resources */,
-				003A142E203BEE4000D66FF8 /* pen-but@2x.png in Resources */,
+				0026DFB3203DCB32001A6971 /* redo-but@2x.png in Resources */,
+				0026DFA7203DCB32001A6971 /* LazyPDF-Print@2x.png in Resources */,
+				0026DFA1203DCB32001A6971 /* LazyPDF-Export@2x.png in Resources */,
+				0026DFBB203DCB32001A6971 /* undo-but@2x.png in Resources */,
+				0026DF9E203DCB32001A6971 /* LazyPDF-Email.png in Resources */,
+				0026DFAD203DCB32001A6971 /* pen-but@2x.png in Resources */,
+				0026DF9A203DCB32001A6971 /* LazyPDF-Button-H.png in Resources */,
+				0026DFAC203DCB32001A6971 /* pen-but.png in Resources */,
+				0026DFA9203DCB32001A6971 /* LazyPDF-Thumbs@2x.png in Resources */,
+				0026DF95203DCB32001A6971 /* Default-736h@3x.png in Resources */,
+				0026DFAF203DCB32001A6971 /* Pen-Button-Y@2x.png in Resources */,
+				0026DFC1203E274E001A6971 /* image-but@2x.png in Resources */,
+				0026DFAE203DCB32001A6971 /* Pen-Button-Y.png in Resources */,
+				0026DFAA203DCB32001A6971 /* line-but.png in Resources */,
+				0026DFBA203DCB32001A6971 /* undo-but.png in Resources */,
+				0026DF8F203DCB32001A6971 /* circlefill-but.png in Resources */,
+				0026DF8D203DCB32001A6971 /* circle-but.png in Resources */,
+				0026DFA2203DCB32001A6971 /* LazyPDF-Mark-N.png in Resources */,
+				0026DF92203DCB32001A6971 /* clear-but@2x.png in Resources */,
 				0020A94E203BC2980088829F /* Assets.xcassets in Resources */,
-				003A1404203BEE4000D66FF8 /* LazyPDF-Mark-Y.png in Resources */,
-				003A13F6203BEE3F00D66FF8 /* eraser-but.png in Resources */,
-				003A1402203BEE4000D66FF8 /* LazyPDF-Mark-N.png in Resources */,
-				003A143E203BEE4000D66FF8 /* undo-but.png in Resources */,
-				003A13FD203BEE3F00D66FF8 /* LazyPDF-Button-N@2x.png in Resources */,
-				003A1439203BEE4000D66FF8 /* text-but.png in Resources */,
-				003A13F1203BEE3F00D66FF8 /* Default-568h@2x.png in Resources */,
-				003A1407203BEE4000D66FF8 /* LazyPDF-Print@2x.png in Resources */,
-				003A13ED203BEE3F00D66FF8 /* circlefill-but.png in Resources */,
-				003A13FE203BEE3F00D66FF8 /* LazyPDF-Email.png in Resources */,
+				0026DFA4203DCB32001A6971 /* LazyPDF-Mark-Y.png in Resources */,
+				0026DF90203DCB32001A6971 /* circlefill-but@2x.png in Resources */,
 				003A140E203BEE4000D66FF8 /* LazyPDFColorPickerView.xib in Resources */,
-				003A1406203BEE4000D66FF8 /* LazyPDF-Print.png in Resources */,
-				003A142D203BEE4000D66FF8 /* pen-but.png in Resources */,
-				003A13F5203BEE3F00D66FF8 /* done-but@2x.png in Resources */,
-				003A13F7203BEE3F00D66FF8 /* eraser-but@2x.png in Resources */,
-				003A13FA203BEE3F00D66FF8 /* LazyPDF-Button-H.png in Resources */,
-				003A13F0203BEE3F00D66FF8 /* clear-but@2x.png in Resources */,
 				003A13F9203BEE3F00D66FF8 /* Info.plist in Resources */,
-				003A13FC203BEE3F00D66FF8 /* LazyPDF-Button-N.png in Resources */,
-				003A143A203BEE4000D66FF8 /* text-but@2x.png in Resources */,
+				0026DFA3203DCB32001A6971 /* LazyPDF-Mark-N@2x.png in Resources */,
+				0026DFAB203DCB32001A6971 /* line-but@2x.png in Resources */,
+				0026DFB4203DCB32001A6971 /* square-but.png in Resources */,
+				0026DF94203DCB32001A6971 /* Default-667h@2x.png in Resources */,
+				0026DFB7203DCB32001A6971 /* squarefill-but@2x.png in Resources */,
+				0026DF93203DCB32001A6971 /* Default-568h@2x.png in Resources */,
+				0026DF98203DCB32001A6971 /* eraser-but.png in Resources */,
+				0026DFB1203DCB32001A6971 /* Pen-Button@2x.png in Resources */,
 				003A1440203BEE4000D66FF8 /* VERSION in Resources */,
+				0026DF9D203DCB32001A6971 /* LazyPDF-Button-N@2x.png in Resources */,
+				0026DFC0203E274E001A6971 /* image-but.png in Resources */,
+				0026DFB2203DCB32001A6971 /* redo-but.png in Resources */,
+				0026DFA6203DCB32001A6971 /* LazyPDF-Print.png in Resources */,
+				0026DFB6203DCB32001A6971 /* squarefill-but.png in Resources */,
+				0026DF99203DCB32001A6971 /* eraser-but@2x.png in Resources */,
+				0026DFB8203DCB32001A6971 /* text-but.png in Resources */,
+				0026DF96203DCB32001A6971 /* done-but.png in Resources */,
 				0020A94C203BC2980088829F /* Main.storyboard in Resources */,
-				003A142B203BEE4000D66FF8 /* line-but.png in Resources */,
-				003A1409203BEE4000D66FF8 /* LazyPDF-Thumbs@2x.png in Resources */,
-				003A1436203BEE4000D66FF8 /* square-but@2x.png in Resources */,
-				003A1401203BEE3F00D66FF8 /* LazyPDF-Export@2x.png in Resources */,
-				003A13EC203BEE3F00D66FF8 /* circle-but@2x.png in Resources */,
-				003A1432203BEE4000D66FF8 /* Pen-Button@2x.png in Resources */,
-				003A13F2203BEE3F00D66FF8 /* Default-667h@2x.png in Resources */,
-				003A1438203BEE4000D66FF8 /* squarefill-but@2x.png in Resources */,
-				003A13EB203BEE3F00D66FF8 /* circle-but.png in Resources */,
-				003A1431203BEE4000D66FF8 /* Pen-Button.png in Resources */,
-				003A1437203BEE4000D66FF8 /* squarefill-but.png in Resources */,
-				003A13EF203BEE3F00D66FF8 /* clear-but.png in Resources */,
-				003A143F203BEE4000D66FF8 /* undo-but@2x.png in Resources */,
-				003A13FF203BEE3F00D66FF8 /* LazyPDF-Email@2x.png in Resources */,
-				003A1400203BEE3F00D66FF8 /* LazyPDF-Export.png in Resources */,
-				003A1433203BEE4000D66FF8 /* redo-but.png in Resources */,
-				003A1405203BEE4000D66FF8 /* LazyPDF-Mark-Y@2x.png in Resources */,
-				003A142C203BEE4000D66FF8 /* line-but@2x.png in Resources */,
-				003A1442203C042300D66FF8 /* Reader.pdf in Resources */,
-				003A1435203BEE4000D66FF8 /* square-but.png in Resources */,
-				003A13F3203BEE3F00D66FF8 /* Default-736h@3x.png in Resources */,
-				003A1403203BEE4000D66FF8 /* LazyPDF-Mark-N@2x.png in Resources */,
-				003A1408203BEE4000D66FF8 /* LazyPDF-Thumbs.png in Resources */,
+				0026DFA8203DCB32001A6971 /* LazyPDF-Thumbs.png in Resources */,
+				0026DF9B203DCB32001A6971 /* LazyPDF-Button-H@2x.png in Resources */,
+				0026DFB9203DCB32001A6971 /* text-but@2x.png in Resources */,
+				0026DF91203DCB32001A6971 /* clear-but.png in Resources */,
+				0026DFBD203DCB42001A6971 /* Reader.pdf in Resources */,
+				0026DFB5203DCB32001A6971 /* square-but@2x.png in Resources */,
+				0026DFB0203DCB32001A6971 /* Pen-Button.png in Resources */,
+				0026DF9C203DCB32001A6971 /* LazyPDF-Button-N.png in Resources */,
+				0026DF9F203DCB32001A6971 /* LazyPDF-Email@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +601,7 @@
 				003A140A203BEE4000D66FF8 /* LazyPDFColorBarPicker.m in Sources */,
 				003A13F8203BEE3F00D66FF8 /* File.m in Sources */,
 				003A1416203BEE4000D66FF8 /* LazyPDFDocumentOutline.m in Sources */,
+				0026DFC4203E3EC9001A6971 /* SPUserResizableView.m in Sources */,
 				003A1413203BEE4000D66FF8 /* LazyPDFContentView.m in Sources */,
 				003A1418203BEE4000D66FF8 /* LazyPDFDrawingView.m in Sources */,
 				003A1414203BEE4000D66FF8 /* LazyPDFDataManager.m in Sources */,

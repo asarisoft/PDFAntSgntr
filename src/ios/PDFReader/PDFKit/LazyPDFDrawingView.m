@@ -201,6 +201,11 @@
         {
             return LazyPDF_AUTORELEASE([LazyPDFDrawingEraserTool new]);
         }
+            
+        case LazyPDFDrawingToolTypeImage:
+        {
+            return LazyPDF_AUTORELEASE([LazyPDFDrawingImageTool new]);
+        }
     }
 }
 
