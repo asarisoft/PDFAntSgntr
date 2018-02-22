@@ -4,16 +4,16 @@
  *  @author Raphael Alla for http://mplus.software
 */
 
-#import "ReaderDocument.h"
+#import "LazyPDFDocument.h"
 
 #ifndef MyReaderDocument_h
 #define MyReaderDocument_h
 
-@interface MyReaderDocument : ReaderDocument
+@interface MyReaderDocument : LazyPDFDocument
 
 @property NSString *title;
 
-+ (ReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title;
++ (LazyPDFDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title;
 
 - (BOOL)canEmail;
 - (BOOL)canExport;

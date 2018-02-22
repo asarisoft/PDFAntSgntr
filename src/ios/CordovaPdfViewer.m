@@ -8,7 +8,7 @@
 
 #import "CordovaPdfViewer.h"
 #import <Cordova/CDV.h>
-#import "ReaderViewController.h"
+#import "LazyPDFViewController.h"
 #import "MyReaderDocument.h"
 
 @implementation CordovaPdfViewer
@@ -31,7 +31,7 @@
 
     self.document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
 
-    self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument: self.document];
+    self.readerViewController = [[LazyPDFViewController alloc] initWithReaderDocument: self.document];
     [self.viewController addChildViewController: self.readerViewController];
 
     self.readerViewController.view.frame = viewerBox;
@@ -56,7 +56,7 @@
     self.readerViewController = nil;
 
     CGRect viewerBox = CGRectMake(left, top, w, h);
-    self.readerViewController = [[ReaderViewController alloc] initWithReaderDocument: self.document];
+    self.readerViewController = [[LazyPDFViewController alloc] initWithReaderDocument: self.document];
     [self.viewController addChildViewController: self.readerViewController];
 
     self.readerViewController.view.frame = viewerBox;

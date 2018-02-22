@@ -8,12 +8,12 @@
 
 
 #import <Cordova/CDV.h>
-#import "ReaderViewController.h"
+#import "LazyPDFViewController.h"
 #import "MyReaderDocument.h"
 
 @interface CordovaPdfViewer : CDVPlugin
 
-@property ReaderViewController *readerViewController;
+@property LazyPDFViewController *readerViewController;
 @property MyReaderDocument *document;
 
 - (void)show:(CDVInvokedUrlCommand*)command;
