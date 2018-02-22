@@ -58,8 +58,6 @@ typedef enum {
 @property (nonatomic, strong) UIImage *prev_image;
 @property (nonatomic, readonly) NSUInteger undoSteps;
 
-@property (nonatomic, strong) SPUserResizableView *resizableView;
-
 // load external image
 - (void)loadImage:(UIImage *)image;
 - (void)loadImageData:(NSData *)imageData;
@@ -73,6 +71,9 @@ typedef enum {
 
 - (BOOL)canRedo;
 - (void)redoLatestStep;
+
+// adding image
+- (void)initializeForResizableImage:(SPUserResizableView *)resizableImage;
 
 @end
 

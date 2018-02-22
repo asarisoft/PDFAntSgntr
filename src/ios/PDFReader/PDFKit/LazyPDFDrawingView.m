@@ -26,6 +26,7 @@
 
 #import "LazyPDFDrawingView.h"
 #import "LazyPDFDrawingTools.h"
+#import "SPUserResizableView.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -48,6 +49,7 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, assign) CGFloat originalFrameYPos;
+@property (nonatomic, strong) SPUserResizableView *resizableView;
 @end
 
 #pragma mark -
@@ -216,6 +218,11 @@
 {
     if (self.textView && !self.textView.hidden) {
         [self commitAndHideTextEntry];
+        return;
+    }
+    
+    if (self.resizableView) {
+        [self commitResizableView];
         return;
     }
     
@@ -419,6 +426,28 @@
     self.textView = nil;
 }
 
+#pragma mark - SPUUserResizableView
+
+- (void)commitResizableView {
+    [self.resizableView hideEditingHandles];
+    
+    ((LazyPDFDrawingImageTool *)self.currentTool).imageData = ((UIImageView *)self.resizableView.contentView).image;
+    
+    [self.pathArray addObject:self.currentTool];
+    
+    CGPoint start = self.resizableView.frame.origin;
+    CGPoint end = CGPointMake(start.x + self.resizableView.frame.size.width, start.y + self.resizableView.frame.size.height);
+    [self.currentTool setInitialPoint:start]; //change this for precision accuracy of text location
+    [self.currentTool moveFromPoint:start toPoint:end];
+    [self setNeedsDisplay];
+    
+    [self finishDrawing];
+    
+    self.currentTool = nil;
+    [self.resizableView removeFromSuperview];
+    self.resizableView = nil;
+}
+
 #pragma mark - Keyboard Events
 
 - (void)keyboardDidShow:(NSNotification *)notification
@@ -559,6 +588,20 @@
         [self updateCacheImage:YES];
         [self setNeedsDisplay];
     }
+}
+
+#pragma mark - Adding Image
+
+- (void)initializeForResizableImage:(SPUserResizableView *)resizableImage
+{
+    self.resizableView = resizableImage;
+    [self addSubview:resizableImage];
+    self.currentTool = [self toolWithCurrentSettings];
+    
+    CGPoint start = resizableImage.frame.origin;
+    CGPoint end = CGPointMake(start.x + resizableImage.frame.size.width, start.y + resizableImage.frame.size.height);
+    [self.currentTool setInitialPoint:start];
+    [self.currentTool moveFromPoint:start toPoint:end];
 }
 
 

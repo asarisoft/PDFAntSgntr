@@ -397,15 +397,11 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 
 - (void)draw
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);
+    // CGContextRef context = UIGraphicsGetCurrentContext();
     
-    // CGContextAddPath(context, path);
-    CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineWidth(context, self.lineWidth);
-    CGContextSetBlendMode(context, kCGBlendModeClear);
-    CGContextStrokePath(context);
-    CGContextRestoreGState(context);
+    CGRect imageRect = CGRectMake(self.firstPoint.x, self.firstPoint.y, self.lastPoint.x - self.firstPoint.x, self.lastPoint.y - self.firstPoint.y);
+    // CGContextDrawImage(context, imageRect, self.imageData.CGImage);
+    [self.imageData drawInRect:imageRect];
 }
 
 @end

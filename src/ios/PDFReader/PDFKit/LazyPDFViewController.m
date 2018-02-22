@@ -1112,6 +1112,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
                                 break;
                             case 8:
                                 //image button
+                                self.drawingView.drawTool = LazyPDFDrawingToolTypeImage;
                                 [self openImagePicker:button];
                                 break;
                             case 9:
@@ -1241,12 +1242,12 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 {
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     
-    CGRect frame = CGRectMake(50, 50, 200, 150);
+    CGRect frame = CGRectMake(100, 100, 200, 150);
     SPUserResizableView *userResizableView = [[SPUserResizableView alloc] initWithFrame:frame];
     UIImageView *contentView = [[UIImageView alloc] initWithFrame:frame];
     contentView.image = chosenImage;
     userResizableView.contentView = contentView;
-    self.drawingView.resizableView = userResizableView;
+    [self.drawingView initializeForResizableImage:userResizableView];
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
