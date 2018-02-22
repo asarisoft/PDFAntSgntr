@@ -1246,7 +1246,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     UIImageView *contentView = [[UIImageView alloc] initWithFrame:frame];
     contentView.image = chosenImage;
     userResizableView.contentView = contentView;
-    [self.drawingView addSubview:userResizableView];
+    self.drawingView.resizableView = userResizableView;
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }

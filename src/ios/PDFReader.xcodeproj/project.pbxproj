@@ -64,6 +64,7 @@
 		0026DFC0203E274E001A6971 /* image-but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DFBE203E274D001A6971 /* image-but.png */; };
 		0026DFC1203E274E001A6971 /* image-but@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026DFBF203E274E001A6971 /* image-but@2x.png */; };
 		0026DFC4203E3EC9001A6971 /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026DFC2203E3EC8001A6971 /* SPUserResizableView.m */; };
+		0026DFC6203E8485001A6971 /* LazyPDFDrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026DFC5203E8484001A6971 /* LazyPDFDrawingTools.m */; };
 		003A13E9203BEE3F00D66FF8 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A1369203BEE3F00D66FF8 /* Annotation.m */; };
 		003A13EA203BEE3F00D66FF8 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A136C203BEE3F00D66FF8 /* CGPDFDocument.m */; };
 		003A13F8203BEE3F00D66FF8 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A137B203BEE3F00D66FF8 /* File.m */; };
@@ -81,7 +82,6 @@
 		003A1414203BEE4000D66FF8 /* LazyPDFDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13A2203BEE3F00D66FF8 /* LazyPDFDataManager.m */; };
 		003A1415203BEE4000D66FF8 /* LazyPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13A4203BEE3F00D66FF8 /* LazyPDFDocument.m */; };
 		003A1416203BEE4000D66FF8 /* LazyPDFDocumentOutline.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13A6203BEE3F00D66FF8 /* LazyPDFDocumentOutline.m */; };
-		003A1417203BEE4000D66FF8 /* LazyPDFDrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13A8203BEE3F00D66FF8 /* LazyPDFDrawingTools.m */; };
 		003A1418203BEE4000D66FF8 /* LazyPDFDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13AA203BEE3F00D66FF8 /* LazyPDFDrawingView.m */; };
 		003A1419203BEE4000D66FF8 /* LazyPDFDrawToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13AC203BEE3F00D66FF8 /* LazyPDFDrawToolbar.m */; };
 		003A141A203BEE4000D66FF8 /* LazyPDFHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A13AE203BEE3F00D66FF8 /* LazyPDFHSBSupport.m */; };
@@ -170,6 +170,7 @@
 		0026DFBF203E274E001A6971 /* image-but@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-but@2x.png"; sourceTree = "<group>"; };
 		0026DFC2203E3EC8001A6971 /* SPUserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserResizableView.m; sourceTree = "<group>"; };
 		0026DFC3203E3EC8001A6971 /* SPUserResizableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserResizableView.h; sourceTree = "<group>"; };
+		0026DFC5203E8484001A6971 /* LazyPDFDrawingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFDrawingTools.m; sourceTree = "<group>"; };
 		003A1368203BEE3F00D66FF8 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		003A1369203BEE3F00D66FF8 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		003A136A203BEE3F00D66FF8 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
@@ -205,7 +206,6 @@
 		003A13A5203BEE3F00D66FF8 /* LazyPDFDocumentOutline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFDocumentOutline.h; sourceTree = "<group>"; };
 		003A13A6203BEE3F00D66FF8 /* LazyPDFDocumentOutline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFDocumentOutline.m; sourceTree = "<group>"; };
 		003A13A7203BEE3F00D66FF8 /* LazyPDFDrawingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFDrawingTools.h; sourceTree = "<group>"; };
-		003A13A8203BEE3F00D66FF8 /* LazyPDFDrawingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFDrawingTools.m; sourceTree = "<group>"; };
 		003A13A9203BEE3F00D66FF8 /* LazyPDFDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFDrawingView.h; sourceTree = "<group>"; };
 		003A13AA203BEE3F00D66FF8 /* LazyPDFDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyPDFDrawingView.m; sourceTree = "<group>"; };
 		003A13AB203BEE3F00D66FF8 /* LazyPDFDrawToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyPDFDrawToolbar.h; sourceTree = "<group>"; };
@@ -315,7 +315,6 @@
 				0026DF6A203DCB31001A6971 /* eraser-but@2x.png */,
 				0026DFBE203E274D001A6971 /* image-but.png */,
 				0026DFBF203E274E001A6971 /* image-but@2x.png */,
-				003A13A8203BEE3F00D66FF8 /* LazyPDFDrawingTools.m */,
 				0026DF6B203DCB31001A6971 /* LazyPDF-Button-H.png */,
 				0026DF6C203DCB31001A6971 /* LazyPDF-Button-H@2x.png */,
 				0026DF6D203DCB31001A6971 /* LazyPDF-Button-N.png */,
@@ -394,6 +393,7 @@
 				003A13A5203BEE3F00D66FF8 /* LazyPDFDocumentOutline.h */,
 				003A13A6203BEE3F00D66FF8 /* LazyPDFDocumentOutline.m */,
 				003A13A7203BEE3F00D66FF8 /* LazyPDFDrawingTools.h */,
+				0026DFC5203E8484001A6971 /* LazyPDFDrawingTools.m */,
 				003A13A9203BEE3F00D66FF8 /* LazyPDFDrawingView.h */,
 				003A13AA203BEE3F00D66FF8 /* LazyPDFDrawingView.m */,
 				003A13AB203BEE3F00D66FF8 /* LazyPDFDrawToolbar.h */,
@@ -604,12 +604,12 @@
 				0026DFC4203E3EC9001A6971 /* SPUserResizableView.m in Sources */,
 				003A1413203BEE4000D66FF8 /* LazyPDFContentView.m in Sources */,
 				003A1418203BEE4000D66FF8 /* LazyPDFDrawingView.m in Sources */,
+				0026DFC6203E8485001A6971 /* LazyPDFDrawingTools.m in Sources */,
 				003A1414203BEE4000D66FF8 /* LazyPDFDataManager.m in Sources */,
 				003A1425203BEE4000D66FF8 /* LazyPDFThumbRender.m in Sources */,
 				003A141D203BEE4000D66FF8 /* LazyPDFModel.xcdatamodeld in Sources */,
 				003A1419203BEE4000D66FF8 /* LazyPDFDrawToolbar.m in Sources */,
 				003A140B203BEE4000D66FF8 /* LazyPDFColorIndicatorView.m in Sources */,
-				003A1417203BEE4000D66FF8 /* LazyPDFDrawingTools.m in Sources */,
 				003A1423203BEE4000D66FF8 /* LazyPDFThumbFetch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,6 +39,8 @@ typedef enum {
     LazyPDFDrawingToolTypeText
 } LazyPDFDrawingToolType;
 
+@class SPUserResizableView;
+
 @protocol LazyPDFDrawingViewDelegate, LazyPDFDrawingTool;
 
 @interface LazyPDFDrawingView : UIView<UITextViewDelegate>
@@ -55,6 +57,8 @@ typedef enum {
 @property (nonatomic, strong, readonly) UIImage *image;
 @property (nonatomic, strong) UIImage *prev_image;
 @property (nonatomic, readonly) NSUInteger undoSteps;
+
+@property (nonatomic, strong) SPUserResizableView *resizableView;
 
 // load external image
 - (void)loadImage:(UIImage *)image;
