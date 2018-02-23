@@ -99,6 +99,7 @@
         <source-file src="src/ios/PDFReader/PDFKit/UIXToolbarView.m"/>
 
 
+        <resource-file src="src/ios/PDFReader/PDFKit/LazyPDFModel.xcdatamodeld"/>
         <resource-file src="src/ios/PDFReader/Assets.xcassets/AppIcon.appiconset/AppIcon-76.png"/>
         <resource-file src="src/ios/PDFReader/Assets.xcassets/AppIcon.appiconset/AppIcon-120.png"/>
         <resource-file src="src/ios/PDFReader/Assets.xcassets/AppIcon.appiconset/AppIcon-152.png"/>
