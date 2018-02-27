@@ -400,7 +400,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     [flattenPDFButton addTarget:self action:@selector(flattenPDF) forControlEvents:UIControlEventTouchUpInside];
     //[[flattenPDFButton layer] setBorderWidth:2.0];
     //[[flattenPDFButton layer] setBorderColor:[UIColor blueColor].CGColor];
-    [self.view addSubview:flattenPDFButton];
+    // [self.view addSubview:flattenPDFButton];
     
     CGRect pagebarRect = self.view.bounds; pagebarRect.size.height = PAGEBAR_HEIGHT;
     pagebarRect.origin.y = (self.view.bounds.size.height - pagebarRect.size.height);
@@ -1118,6 +1118,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
                             case 9:
                                 //eraser button
                                 self.drawingView.drawTool = LazyPDFDrawingToolTypeEraser;
+                                self.lineWidth = [NSNumber numberWithFloat:20];
                                 break;
                             case 10:
                                 //color button

@@ -11,6 +11,10 @@
 #import "LazyPDFViewController.h"
 #import "MyReaderDocument.h"
 
+@interface CordovaPdfViewer() <LazyPDFViewControllerDelegate>
+
+@end
+
 @implementation CordovaPdfViewer
 
 - (void)show:(CDVInvokedUrlCommand*)command
@@ -32,6 +36,7 @@
     self.document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
 
     self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document];
+    self.readerViewController.delegate = self;
     [self.viewController addChildViewController: self.readerViewController];
 
     self.readerViewController.view.frame = viewerBox;
@@ -80,6 +85,13 @@
     self.readerViewController = nil;
     CDVPluginResult* pluginResult = nil;
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+#pragma mark - LazyPDFViewControllerDelegate methods
+
+- (void)dismissLazyPDFViewController:(LazyPDFViewController *)viewController
+{
+    [self dismiss:nil];
 }
 
 

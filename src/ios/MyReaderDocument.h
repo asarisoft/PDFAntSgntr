@@ -13,7 +13,7 @@
 
 @property NSString *title;
 
-+ (LazyPDFDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title;
++ (MyReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title;
 
 - (BOOL)canEmail;
 - (BOOL)canExport;

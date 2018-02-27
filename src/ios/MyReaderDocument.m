@@ -11,7 +11,7 @@
 
 @implementation MyReaderDocument: LazyPDFDocument
 
-+ (LazyPDFDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title
++ (MyReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title
 {
     MyReaderDocument *document = [[MyReaderDocument alloc] initWithFilePath:filePath password:phrase];
     document.title = title;
