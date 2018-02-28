@@ -20,5 +20,6 @@
 
 - (void)redim:(CDVInvokedUrlCommand*)command;
 
+- (void)addImage:(CDVInvokedUrlCommand*)command;
 
 @end

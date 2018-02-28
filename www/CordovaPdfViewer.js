@@ -109,3 +109,43 @@ exports.show2 = function(viewerId, src, success, error) {
     elem.innerHTML = innerHTML;
     success();
 };
+
+exports.addImage = function(_viewerId, pdffile, _title, imagefile, page, posx, posy, imgwidth, imgheight, success, error) {
+    if (isCurrentlyViewing) {
+        exec(function() {}, function() {}, "CordovaPdfViewer", "dismiss");
+    }
+
+    viewerId = _viewerId;
+    documentSrc = pdffile;
+    documentTitle = _title + '.pdf';
+    var extension = pdffile.split('.').pop();
+    
+    console.log('Source ' + pdffile);
+    console.log('extension ' + extension);
+    
+    if (extension != 'pdf') {
+        msg = 'File extension must be pdf';
+        console.log(msg);
+        error(msg);
+        return;
+    }
+    
+    var elem = document.getElementById(_viewerId);
+    if (!elem) {
+        msg = 'Unable to find element with id ' + viewerId;
+        console.log(msg);
+        error(msg);
+        return;
+    }
+    
+    console.log('src=' + pdffile);
+    
+    var rect = elem.getBoundingClientRect();
+    console.log(rect);
+
+    isCurrentlyViewing = true;
+    viewerElement = elem;
+
+    exec(success, error, "CordovaPdfViewer", "addImage", [pdffile, documentTitle, imagefile, page, rect.left, rect.top, rect.width, rect.height, posx, posy, imgwidth, imgheight]);
+};
+

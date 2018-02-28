@@ -10,6 +10,7 @@
 #import <Cordova/CDV.h>
 #import "LazyPDFViewController.h"
 #import "MyReaderDocument.h"
+#import "LazyPDFDataManager.h"
 
 @interface CordovaPdfViewer() <LazyPDFViewControllerDelegate>
 
@@ -83,6 +84,54 @@
     [self.readerViewController.view removeFromSuperview];
     [self.readerViewController removeFromParentViewController];
     self.readerViewController = nil;
+    CDVPluginResult* pluginResult = nil;
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)addImage:(CDVInvokedUrlCommand*)command
+{
+    NSString *pdfFile = [command argumentAtIndex:0];
+    NSString *title = [command argumentAtIndex:1];
+    NSString *imageFile = [command argumentAtIndex:2];
+    int pageNumber = [[command argumentAtIndex:3] intValue];
+    float viewX = [[command argumentAtIndex:4] floatValue];
+    float viewY = [[command argumentAtIndex:5] floatValue];
+    float viewWidth = [[command argumentAtIndex:6] floatValue];
+    float viewHeight = [[command argumentAtIndex:7] floatValue];
+    float imageX = [[command argumentAtIndex:8] floatValue];
+    float imageY = [[command argumentAtIndex:9] floatValue];
+    float imageWidth = [[command argumentAtIndex:10] floatValue];
+    float imageHeight = [[command argumentAtIndex:11] floatValue];
+
+    self.document = [MyReaderDocument withDocumentFilePath:pdfFile password: nil displayTitle: title];
+    UIImage *image = [UIImage imageWithContentsOfFile:imageFile];
+
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(viewWidth, viewHeight), NO, 0.f);
+    [image drawInRect:CGRectMake(imageX, imageY, imageWidth, imageHeight)];
+    UIImage * const scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSMutableDictionary *annotDict = [NSMutableDictionary dictionary];
+    NSData *imageData = UIImagePNGRepresentation(scaledImage);
+    [annotDict setValue:imageData forKey:@"image"];
+    [annotDict setValue:[NSNumber numberWithInteger:pageNumber] forKey:@"page"];
+    
+    [annotDict setValue:[self.document fileDate] forKey:@"fileDate"];
+    [annotDict setValue:[self.document fileSize] forKey:@"fileSize"];
+    [annotDict setValue:[self.document pageCount] forKey:@"pageCount"];
+    [annotDict setValue:[self.document filePath] forKey:@"filePath"];
+    
+    [[LazyPDFDataManager sharedInstance] addAnnotation:annotDict];
+    
+    CGRect viewerBox = CGRectMake(viewX, viewY, viewWidth, viewHeight);
+
+    self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document];
+    self.readerViewController.delegate = self;
+    [self.viewController addChildViewController: self.readerViewController];
+    
+    self.readerViewController.view.frame = viewerBox;
+    [self.webView addSubview: self.readerViewController.view];
+
     CDVPluginResult* pluginResult = nil;
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
