@@ -63,6 +63,7 @@
 
     CGRect viewerBox = CGRectMake(left, top, w, h);
     self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document];
+    self.readerViewController.delegate = self;
     [self.viewController addChildViewController: self.readerViewController];
 
     self.readerViewController.view.frame = viewerBox;
