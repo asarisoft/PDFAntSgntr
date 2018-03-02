@@ -53,4 +53,6 @@
 
 - (void)updateDocumentProperties;
 
+- (void)savePDFTo:(NSString *)filePath;
+
 @end

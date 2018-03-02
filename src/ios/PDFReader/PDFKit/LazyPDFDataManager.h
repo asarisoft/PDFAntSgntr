@@ -26,4 +26,6 @@
 - (Annotation *)getAnnotation:(NSString *)filePath withPage:(NSNumber *)page;
 - (UIImage *)getAnnotationImage:(NSString *)filePath withPage:(NSNumber *)page;
 - (void)deleteFileByPath:(NSString *)filePath;
++ (BOOL)copyFrom:(NSString*)src to:(NSString*)dest error:(NSError* __autoreleasing*)error;
+- (void)addImage:(NSString *)imageFile in:(CGSize)viewSize rect:(CGRect)imageRect params:(NSDictionary *)params;
 @end

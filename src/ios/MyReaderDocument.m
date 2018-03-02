@@ -14,15 +14,17 @@
 + (MyReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase displayTitle:(NSString *) title
 {
     MyReaderDocument *document = [[MyReaderDocument alloc] initWithFilePath:filePath password:phrase];
-    document.title = title;
-    
-    // Get userdefaults storage
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *indexArray = [defaults objectForKey: document.fileName];
-
-    
-    for (NSNumber *index in indexArray) {
-        [document.bookmarks addIndex:[index intValue]];
+    if (document != nil) {
+        document.title = title;
+        
+        // Get userdefaults storage
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSArray *indexArray = [defaults objectForKey: document.fileName];
+        
+        
+        for (NSNumber *index in indexArray) {
+            [document.bookmarks addIndex:[index intValue]];
+        }
     }
     
     return document;

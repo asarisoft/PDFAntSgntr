@@ -26,6 +26,7 @@
 #import "LazyPDFDocument.h"
 #import "CGPDFDocument.h"
 #import <fcntl.h>
+#import "LazyPDFDataManager.h"
 
 @interface LazyPDFDocument ()
 
@@ -348,6 +349,45 @@
 	}
 
 	return self;
+}
+
+- (void)savePDFTo:(NSString *)filePath
+{
+    CGPDFDocumentRef document = CGPDFDocumentCreateWithURL ((CFURLRef) [self fileURL]);
+    size_t count = CGPDFDocumentGetNumberOfPages (document);
+    
+    if (count == 0)
+    {
+        NSLog(@"PDF needs at least one page");
+        return;
+    }
+    
+    UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
+    
+    for (int i = 1; i <= count; i++) {
+        CGPDFPageRef page = CGPDFDocumentGetPage (document, i);
+        
+        const CGRect pageFrame = CGPDFPageGetBoxRect(page, kCGPDFMediaBox);
+        UIGraphicsBeginPDFPageWithInfo(pageFrame, nil);
+        
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        
+        // Draw the page (flipped)
+        CGContextSaveGState(ctx);
+        CGContextScaleCTM(ctx, 1, -1);
+        CGContextTranslateCTM(ctx, 0, -pageFrame.size.height);
+        CGContextDrawPDFPage(ctx, page);
+        CGContextRestoreGState(ctx);
+        
+        UIImage *annotationImage = [[LazyPDFDataManager sharedInstance] getAnnotationImage:[self filePath] withPage:@(i)];
+        [annotationImage drawInRect:pageFrame];
+    }
+    
+    UIGraphicsEndPDFContext();
+    
+    CGPDFDocumentRelease (document);
+    
+    [[LazyPDFDataManager sharedInstance] deleteFileByPath:[self filePath]];
 }
 
 @end

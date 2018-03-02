@@ -203,6 +203,7 @@ static LazyPDFDataManager *instance = nil;
     request= nil;
     return annotation;
 }
+
 - (UIImage *)getAnnotationImage:(NSString *)filePath withPage:(NSNumber *)page
 {
     UIImage *image=nil;
@@ -212,6 +213,7 @@ static LazyPDFDataManager *instance = nil;
     }
     return image;
 }
+
 - (void)deleteFileByPath:(NSString *)filePath
 {
     File *file = [self getFileByPath:filePath];
@@ -220,4 +222,76 @@ static LazyPDFDataManager *instance = nil;
         [self saveContext];
     }
 }
+
++ (BOOL)copyFrom:(NSString*)src to:(NSString*)dest error:(NSError* __autoreleasing*)error
+{
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:src]) {
+        NSString* errorString = [NSString stringWithFormat:@"%@ file does not exist.", src];
+        if (error != NULL) {
+            (*error) = [NSError errorWithDomain:@"PDFViewer Plugin" code:200 userInfo:@{NSLocalizedDescriptionKey: errorString}];
+        }
+        return NO;
+    }
+    
+    // generate unique filepath in temp directory
+    CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
+    CFStringRef uuidString = CFUUIDCreateString(kCFAllocatorDefault, uuidRef);
+    NSString* tempBackup = [[NSTemporaryDirectory() stringByAppendingPathComponent:(__bridge NSString*)uuidString] stringByAppendingPathExtension:@"bak"];
+    CFRelease(uuidString);
+    CFRelease(uuidRef);
+    
+    BOOL destExists = [fileManager fileExistsAtPath:dest];
+    
+    // backup the dest
+    if (destExists && ![fileManager copyItemAtPath:dest toPath:tempBackup error:error]) {
+        return NO;
+    }
+    
+    // remove the dest
+    if (destExists && ![fileManager removeItemAtPath:dest error:error]) {
+        return NO;
+    }
+    
+    // create path to dest
+    if (!destExists && ![fileManager createDirectoryAtPath:[dest stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:error]) {
+        return NO;
+    }
+    
+    // copy src to dest
+    if ([fileManager copyItemAtPath:src toPath:dest error:error]) {
+        // success - cleanup - delete the backup to the dest
+        if ([fileManager fileExistsAtPath:tempBackup]) {
+            [fileManager removeItemAtPath:tempBackup error:error];
+        }
+        return YES;
+    } else {
+        // failure - we restore the temp backup file to dest
+        [fileManager copyItemAtPath:tempBackup toPath:dest error:error];
+        // cleanup - delete the backup to the dest
+        if ([fileManager fileExistsAtPath:tempBackup]) {
+            [fileManager removeItemAtPath:tempBackup error:error];
+        }
+        return NO;
+    }
+}
+
+- (void)addImage:(NSString *)imageFile in:(CGSize)viewSize rect:(CGRect)imageRect params:(NSDictionary *)params
+{
+    UIImage *image = [UIImage imageWithContentsOfFile:imageFile];
+    
+    UIGraphicsBeginImageContextWithOptions(viewSize, NO, 0.f);
+    [image drawInRect:imageRect];
+    UIImage * const scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSMutableDictionary *annotDict = [NSMutableDictionary dictionary];
+    NSData *imageData = UIImagePNGRepresentation(scaledImage);
+    [annotDict setValue:imageData forKey:@"image"];
+    [annotDict setValuesForKeysWithDictionary:params];
+    
+    [self addAnnotation:annotDict];
+}
+
 @end

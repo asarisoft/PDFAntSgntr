@@ -87,10 +87,10 @@ exports.autoRedim = function() {
     pdfViewer.redim(success, error, '', '', '', '');
 };
 
-exports.dismiss = function(success, error) {
+exports.dismiss = function(resultPath, success, error) {
     console.log('Dismiss');
     isCurrentlyViewing = false;
-    exec(success, error, "CordovaPdfViewer", "dismiss");
+    exec(success, error, "CordovaPdfViewer", "dismiss", [resultPath]);
 };
 
 
