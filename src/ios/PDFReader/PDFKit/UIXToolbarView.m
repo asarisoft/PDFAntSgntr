@@ -55,7 +55,9 @@
 		self.autoresizesSubviews = YES;
 		self.userInteractionEnabled = YES;
 		self.contentMode = UIViewContentModeRedraw;
-		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        if (frame.size.width > frame.size.height) {
+            self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        }
 
 		if ([self.layer isKindOfClass:[CAGradientLayer class]])
 		{
@@ -82,7 +84,9 @@
 			lineView.autoresizesSubviews = NO;
 			lineView.userInteractionEnabled = NO;
 			lineView.contentMode = UIViewContentModeRedraw;
-			lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+            if (frame.size.width > frame.size.height) {
+                lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+            }
 			lineView.backgroundColor = [UIColor colorWithWhite:0.64f alpha:0.94f];
 			[self addSubview:lineView];
 		}
@@ -117,7 +121,9 @@
 		self.autoresizesSubviews = NO;
 		self.userInteractionEnabled = NO;
 		self.contentMode = UIViewContentModeRedraw;
-		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        if (frame.size.width > frame.size.height) {
+            self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        }
 		self.backgroundColor = [UIColor clearColor];
 
 		CAGradientLayer *layer = (CAGradientLayer *)self.layer;
