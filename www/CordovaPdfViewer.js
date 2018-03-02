@@ -110,7 +110,7 @@ exports.show2 = function(viewerId, src, success, error) {
     success();
 };
 
-exports.addImage = function(pdffile, imagefile, page, viewwidth, viewheight, posx, posy, imgwidth, imgheight, success, error) {
+exports.addImage = function(pdffile, resultfile, imagefile, page, viewwidth, viewheight, posx, posy, imgwidth, imgheight, success, error) {
     var extension = pdffile.split('.').pop();
     
     console.log('Source ' + pdffile);
@@ -123,6 +123,6 @@ exports.addImage = function(pdffile, imagefile, page, viewwidth, viewheight, pos
         return;
     }
 
-    exec(success, error, "CordovaPdfViewer", "addImage", [pdffile, imagefile, page, viewwidth, viewheight, posx, posy, imgwidth, imgheight]);
+    exec(success, error, "CordovaPdfViewer", "addImage", [pdffile, resultfile, imagefile, page, viewwidth, viewheight, posx, posy, imgwidth, imgheight]);
 };
 
