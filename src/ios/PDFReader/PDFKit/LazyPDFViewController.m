@@ -1278,4 +1278,44 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
         [self updateDrawingView];
     }
 }
+
+#pragma mark - Finalizing
+
+- (void)finalizeDrwaing
+{
+    LazyPDFContentView *theDrawView = (LazyPDFContentView *)[contentViews objectForKey:[NSNumber numberWithInteger:currentPage]];
+    for (UIView *subview in theDrawView.subviews)
+    {
+        for (UIView *subview2 in subview.subviews)
+        {
+            if([subview2 isKindOfClass:[LazyPDFContentPage class]]){
+                if (self.drawingView!=nil) {
+                    //Save Image Coding Starts
+                    if (![self isBlankImage:self.drawingView.image] && self.drawingView.image!=nil) {
+                        //[contentPage showDrawingView:self.drawingView.image];
+                        //[contentPage addSubview:self.drawingView];
+                        
+                        NSMutableDictionary *annotDict = [NSMutableDictionary new];
+                        NSData *image = UIImagePNGRepresentation(self.drawingView.image);
+                        [annotDict setValue:image forKey:@"image"];
+                        [annotDict setValue:[NSNumber numberWithInteger:currentPage] forKey:@"page"];
+                        
+                        [annotDict setValue:[document fileDate] forKey:@"fileDate"];
+                        [annotDict setValue:[document fileSize] forKey:@"fileSize"];
+                        [annotDict setValue:[document pageCount] forKey:@"pageCount"];
+                        [annotDict setValue:[document filePath] forKey:@"filePath"];
+                        
+                        [[LazyPDFDataManager sharedInstance] addAnnotation:annotDict];
+                        annotDict = nil;
+                    }
+                }
+                self.drawingView = nil;
+                //Save Image Coding Ends
+                break;
+            }
+        }
+        
+    }
+}
+
 @end

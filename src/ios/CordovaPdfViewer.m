@@ -89,19 +89,24 @@
     NSString *resultFile = [command argumentAtIndex:0];
     
     NSLog(@"Dismiss now from code");
-    [self.readerViewController.view removeFromSuperview];
-    [self.readerViewController removeFromParentViewController];
-    self.readerViewController = nil;
+    
+    if (self.readerViewController != nil) {
+        [self.readerViewController finalizeDrwaing];
+        
+        [self.readerViewController.view removeFromSuperview];
+        [self.readerViewController removeFromParentViewController];
+        self.readerViewController = nil;
+    }
     
     [self.commandDelegate runInBackground:^{
         if (self.document) {
             [self.document savePDFTo:resultFile];
             self.document = nil;
         }
+        
+        CDVPluginResult* pluginResult = nil;
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
-    
-    CDVPluginResult* pluginResult = nil;
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)addImage:(CDVInvokedUrlCommand*)command
