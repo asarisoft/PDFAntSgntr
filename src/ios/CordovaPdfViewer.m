@@ -35,6 +35,8 @@
         // NSBundle* main = [NSBundle mainBundle];
         // NSString *localPath = [main pathForResource: filename ofType:@"pdf" inDirectory: directory];
         
+        CDVPluginResult *pluginResult = nil;
+
         self.document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
         if (self.document != nil) {
             dispatch_sync(dispatch_get_main_queue(), ^{
@@ -45,9 +47,11 @@
                 self.readerViewController.view.frame = viewerBox;
                 [self.webView addSubview: self.readerViewController.view];
             });
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        } else {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"It's fail to open the pdf file."];
         }
         
-        CDVPluginResult* pluginResult = nil;
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
@@ -80,7 +84,8 @@
      self.readerViewController.view.frame = viewerBox;
      */
     
-    CDVPluginResult* pluginResult = nil;
+    CDVPluginResult *pluginResult = nil;
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
@@ -99,12 +104,16 @@
     }
     
     [self.commandDelegate runInBackground:^{
+        CDVPluginResult *pluginResult = nil;
         if (self.document) {
             [self.document savePDFTo:resultFile];
             self.document = nil;
+            
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        } else {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"There is no the opened document."];
         }
         
-        CDVPluginResult* pluginResult = nil;
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
@@ -123,21 +132,37 @@
         float imageY = [[command argumentAtIndex:iArg++] floatValue];
         float imageWidth = [[command argumentAtIndex:iArg++] floatValue];
         float imageHeight = [[command argumentAtIndex:iArg++] floatValue];
-    
+        
+        CDVPluginResult *pluginResult = nil;
+
         MyReaderDocument *document = [MyReaderDocument withDocumentFilePath:pdfFile password: nil displayTitle:@"Document title.pdf"];
         if (document != nil) {
-            NSMutableDictionary *annotDict = [NSMutableDictionary dictionary];
-            [annotDict setValue:[NSNumber numberWithInteger:pageNumber] forKey:@"page"];
-            [annotDict setValue:[document fileDate] forKey:@"fileDate"];
-            [annotDict setValue:[document fileSize] forKey:@"fileSize"];
-            [annotDict setValue:[document pageCount] forKey:@"pageCount"];
-            [annotDict setValue:[document filePath] forKey:@"filePath"];
+            int pageCount = [document.pageCount intValue];
+            if (pageNumber > pageCount || pageNumber < -pageCount || pageNumber == 0) {
+                pageNumber = -1;
+            } else if (pageNumber < 0) {
+                pageNumber = pageNumber + pageCount + 1;
+            }
             
-            [[LazyPDFDataManager sharedInstance] addImage:imageFile in:CGSizeMake(viewWidth, viewHeight) rect:CGRectMake(imageX, imageY, imageWidth, imageHeight) params:annotDict];
-            [document savePDFTo:resultFile];
+            if (pageNumber > 0) {
+                NSMutableDictionary *annotDict = [NSMutableDictionary dictionary];
+                [annotDict setValue:[NSNumber numberWithInteger:pageNumber] forKey:@"page"];
+                [annotDict setValue:[document fileDate] forKey:@"fileDate"];
+                [annotDict setValue:[document fileSize] forKey:@"fileSize"];
+                [annotDict setValue:[document pageCount] forKey:@"pageCount"];
+                [annotDict setValue:[document filePath] forKey:@"filePath"];
+                
+                [[LazyPDFDataManager sharedInstance] addImage:imageFile in:CGSizeMake(viewWidth, viewHeight) rect:CGRectMake(imageX, imageY, imageWidth, imageHeight) params:annotDict];
+                [document savePDFTo:resultFile];
+                
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+            } else {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"The page number is invalidate."];
+            }
+        } else {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"It's fail to open the pdf file."];
         }
         
-        CDVPluginResult* pluginResult = nil;
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
