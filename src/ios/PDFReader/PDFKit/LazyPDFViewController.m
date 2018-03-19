@@ -94,7 +94,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 
 #define TOOLBAR_HEIGHT 44.0f
 #define PAGEBAR_HEIGHT 48.0f
-#define DRAWBAR_HEIGHT 430.0f
+#define DRAWBAR_HEIGHT 120.0f
 #define DRAWBAR_WIDTH 44.0f
 
 #define SCROLLVIEW_OUTSET_SMALL 4.0f

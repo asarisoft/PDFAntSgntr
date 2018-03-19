@@ -106,7 +106,9 @@
     [self.commandDelegate runInBackground:^{
         CDVPluginResult *pluginResult = nil;
         if (self.document) {
-            [self.document savePDFTo:resultFile];
+            if (resultFile) {
+                [self.document savePDFTo:resultFile];
+            }
             self.document = nil;
             
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
