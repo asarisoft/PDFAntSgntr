@@ -27,8 +27,9 @@
         int left = [[command.arguments objectAtIndex:3] intValue];
         int w = [[command.arguments objectAtIndex:4] intValue];
         int h = [[command.arguments objectAtIndex:5] intValue];
+        NSInteger rr = [[command.arguments objectAtIndex:6] intValue];
         
-        NSLog(@"filename=%@ title=%@ top=%d left=%d h=%d w=%d", filename, title, left, top, w, h);
+        NSLog(@"filename=%@ title=%@ top=%d left=%d h=%d w=%d, rr=%d", filename, title, left, top, w, h, rr);
         
         CGRect viewerBox = CGRectMake(left, top, w, h);
         
@@ -40,7 +41,7 @@
         self.document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
         if (self.document != nil) {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document readonly: false];
+                self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document readonly: rr];
                 self.readerViewController.delegate = self;
                 [self.viewController addChildViewController: self.readerViewController];
                 
@@ -71,7 +72,7 @@
     self.readerViewController = nil;
     
     CGRect viewerBox = CGRectMake(left, top, w, h);
-    self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document readonly: false];
+    self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document readonly: 0];
     self.readerViewController.delegate = self;
     [self.viewController addChildViewController: self.readerViewController];
     

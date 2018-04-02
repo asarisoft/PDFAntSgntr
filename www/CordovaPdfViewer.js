@@ -28,7 +28,7 @@ function onOrientationChange(e) {
 }
 
 
-exports.show = function(_viewerId, src, _title, success, error, _readOnly) {
+exports.show = function(_viewerId, src, _title, _readOnly, success, error) {
     readOnly = _readOnly;
 
     if (isCurrentlyViewing) {

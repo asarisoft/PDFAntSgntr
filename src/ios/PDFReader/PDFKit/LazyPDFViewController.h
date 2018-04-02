@@ -51,7 +51,7 @@
 
 @property (nonatomic, weak, readwrite) id <LazyPDFViewControllerDelegate> delegate;
 
-- (instancetype)initWithLazyPDFDocument:(LazyPDFDocument *)object readonly:(BOOL *) readonly;
+- (instancetype)initWithLazyPDFDocument:(LazyPDFDocument *)object readonly:(NSInteger *) readonly;
 - (void)finalizeDrwaing;
 
 @end

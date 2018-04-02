@@ -87,7 +87,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     
     BOOL ignoreDidScroll;
     
-    BOOL *_readonly;
+    NSInteger *_readonly;
     
 }
 
@@ -317,7 +317,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 
 #pragma mark - UIViewController methods
 
-- (instancetype)initWithLazyPDFDocument:(LazyPDFDocument *)object readonly:(BOOL *)readonly
+- (instancetype)initWithLazyPDFDocument:(LazyPDFDocument *)object readonly:(NSInteger *)readonly
 {
     if ((self = [super initWithNibName:nil bundle:nil])) // Initialize superclass
     {
@@ -394,7 +394,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     mainToolbar.delegate = self; // LazyPDFMainToolbarDelegate
     [self.view addSubview:mainToolbar];
     
-    if (_readonly == false) {
+    if (_readonly == 0) {
         CGRect drawbarRect = CGRectMake(10, viewRect.origin.y+TOOLBAR_HEIGHT+10, DRAWBAR_WIDTH, DRAWBAR_HEIGHT);
         drawToolbar = [[LazyPDFDrawToolbar alloc] initWithFrame:drawbarRect document:document]; // LazyPDFMainToolbar
         drawToolbar.delegate = self; // LazyPDFDrawToolbarDelegate
