@@ -40,7 +40,7 @@
         self.document = [MyReaderDocument withDocumentFilePath:filename password: nil displayTitle: title];
         if (self.document != nil) {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document];
+                self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document readonly: false];
                 self.readerViewController.delegate = self;
                 [self.viewController addChildViewController: self.readerViewController];
                 
@@ -71,7 +71,7 @@
     self.readerViewController = nil;
     
     CGRect viewerBox = CGRectMake(left, top, w, h);
-    self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document];
+    self.readerViewController = [[LazyPDFViewController alloc] initWithLazyPDFDocument: self.document readonly: false];
     self.readerViewController.delegate = self;
     [self.viewController addChildViewController: self.readerViewController];
     

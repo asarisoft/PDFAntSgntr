@@ -7,6 +7,7 @@ var viewerElement;
 var documentSrc;
 var documentTitle;
 var isCurrentlyViewing = false;
+var readOnly = false;
 
 function onOrientationChange(e) {
     if (!isCurrentlyViewing) {
@@ -27,7 +28,9 @@ function onOrientationChange(e) {
 }
 
 
-exports.show = function(_viewerId, src, _title, success, error) {
+exports.show = function(_viewerId, src, _title, success, error, _readOnly) {
+    readOnly = _readOnly;
+
     if (isCurrentlyViewing) {
         exec(function() {}, function() {}, "CordovaPdfViewer", "dismiss");
     }
@@ -63,7 +66,7 @@ exports.show = function(_viewerId, src, _title, success, error) {
     isCurrentlyViewing = true;
     viewerElement = elem;
 
-    exec(success, error, "CordovaPdfViewer", "show", [src, documentTitle, rect.top, rect.left, rect.width, rect.height]);
+    exec(success, error, "CordovaPdfViewer", "show", [src, documentTitle, rect.top, rect.left, rect.width, rect.height, readOnly]);
 };
 
 exports.redim = function(success, error, top, left, width, height) {

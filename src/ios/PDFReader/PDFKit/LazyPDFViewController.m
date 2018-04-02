@@ -1,25 +1,25 @@
 //
-//	LazyPDFViewController.m
+//    LazyPDFViewController.m
 //
 //  Created by Palanisamy Easwaramoorthy on 23/2/15.
 //  Copyright (c) 2015 Lazyprogram. All rights reserved.
 //
-//	Permission is hereby granted, free of charge, to any person obtaining a copy
-//	of this software and associated documentation files (the "Software"), to deal
-//	in the Software without restriction, including without limitation the rights to
-//	use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-//	of the Software, and to permit persons to whom the Software is furnished to
-//	do so, subject to the following conditions:
+//    Permission is hereby granted, free of charge, to any person obtaining a copy
+//    of this software and associated documentation files (the "Software"), to deal
+//    in the Software without restriction, including without limitation the rights to
+//    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+//    of the Software, and to permit persons to whom the Software is furnished to
+//    do so, subject to the following conditions:
 //
-//	The above copyright notice and this permission notice shall be included in all
-//	copies or substantial portions of the Software.
+//    The above copyright notice and this permission notice shall be included in all
+//    copies or substantial portions of the Software.
 //
-//	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-//	OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-//	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-//	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+//    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 
@@ -86,6 +86,9 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     NSDate *lastHideTime;
     
     BOOL ignoreDidScroll;
+    
+    BOOL *_readonly;
+    
 }
 
 #pragma mark - Constants
@@ -314,7 +317,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 
 #pragma mark - UIViewController methods
 
-- (instancetype)initWithLazyPDFDocument:(LazyPDFDocument *)object
+- (instancetype)initWithLazyPDFDocument:(LazyPDFDocument *)object readonly:(BOOL *)readonly
 {
     if ((self = [super initWithNibName:nil bundle:nil])) // Initialize superclass
     {
@@ -333,12 +336,16 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
             [object updateDocumentProperties]; document = object; // Retain the supplied LazyPDFDocument object for our use
             
             [LazyPDFThumbCache touchThumbCacheWithGUID:object.guid]; // Touch the document thumb cache directory
+            
+           
         }
         else // Invalid LazyPDFDocument object
         {
             self = nil;
         }
     }
+    
+    _readonly = readonly;
     
     return self;
 }
@@ -387,10 +394,12 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     mainToolbar.delegate = self; // LazyPDFMainToolbarDelegate
     [self.view addSubview:mainToolbar];
     
-    CGRect drawbarRect = CGRectMake(10, viewRect.origin.y+TOOLBAR_HEIGHT+10, DRAWBAR_WIDTH, DRAWBAR_HEIGHT);
-    drawToolbar = [[LazyPDFDrawToolbar alloc] initWithFrame:drawbarRect document:document]; // LazyPDFMainToolbar
-    drawToolbar.delegate = self; // LazyPDFDrawToolbarDelegate
-    [self.view addSubview:drawToolbar];
+    if (_readonly == false) {
+        CGRect drawbarRect = CGRectMake(10, viewRect.origin.y+TOOLBAR_HEIGHT+10, DRAWBAR_WIDTH, DRAWBAR_HEIGHT);
+        drawToolbar = [[LazyPDFDrawToolbar alloc] initWithFrame:drawbarRect document:document]; // LazyPDFMainToolbar
+        drawToolbar.delegate = self; // LazyPDFDrawToolbarDelegate
+        [self.view addSubview:drawToolbar];
+    }
     
     CGRect flattenRect = CGRectMake(self.view.bounds.size.width-120, viewRect.origin.y+TOOLBAR_HEIGHT+10, 110, 40);
     flattenPDFButton = [[UIButton alloc] initWithFrame:flattenRect];
@@ -531,7 +540,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
 {
-
+    
     if (CGSizeEqualToSize(theScrollView.contentSize, CGSizeZero) == false)
     {
         
@@ -824,14 +833,14 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     
     //Pages
     for (int page=1; page<=[document.pageCount intValue]; page++) {
-        //	Get the current page and page frame
+        //    Get the current page and page frame
         CGPDFPageRef pdfPage = CGPDFDocumentGetPage(documentLocal, page);
         
         const CGRect pageFrame = CGPDFPageGetBoxRect(pdfPage, kCGPDFMediaBox);
         
         UIGraphicsBeginPDFPageWithInfo(pageFrame, nil);
         
-        //	Draw the page (flipped)
+        //    Draw the page (flipped)
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         CGContextSaveGState(ctx);
         CGContextScaleCTM(ctx, 1, -1);
@@ -1249,7 +1258,7 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
     contentView.image = chosenImage;
     userResizableView.contentView = contentView;
     [self.drawingView initializeForResizableImage:userResizableView];
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -1319,3 +1328,4 @@ LazyPDFMainToolbarDelegate, LazyPDFMainPagebarDelegate, LazyPDFContentViewDelega
 }
 
 @end
+
