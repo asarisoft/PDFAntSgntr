@@ -77,6 +77,10 @@ static inline CGFloat zoomScaleThatFits(CGSize target, CGSize source)
 	return ((w_scale < h_scale) ? w_scale : h_scale);
 }
 
+static inline CGFloat zoomScaleThatFills(CGSize target, CGSize source) {
+    return (target.width / source.width);
+}
+
 #pragma mark - LazyPDFContentView class methods
 
 + (void)initialize
@@ -102,7 +106,9 @@ static inline CGFloat zoomScaleThatFits(CGSize target, CGSize source)
 
 - (void)updateMinimumMaximumZoom
 {
-	CGFloat zoomScale = zoomScaleThatFits(self.bounds.size, theContentPage.bounds.size);
+	// CGFloat zoomScale = zoomScaleThatFits(self.bounds.size, theContentPage.bounds.size);
+
+	CGFloat zoomScale = zoomScaleThatFills(self.bounds.size, theContentPage.bounds.size);
 
 	self.minimumZoomScale = zoomScale; self.maximumZoomScale = (zoomScale * ZOOM_MAXIMUM);
 

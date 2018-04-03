@@ -30,7 +30,7 @@
 #import <Foundation/Foundation.h>
 
 #define LazyPDF_FLAT_UI TRUE
-#define LazyPDF_SHOW_SHADOWS TRUE
+#define LazyPDF_SHOW_SHADOWS FALSE
 #define LazyPDF_ENABLE_THUMBS TRUE
 #define LazyPDF_DISABLE_RETINA FALSE
 #define LazyPDF_ENABLE_PREVIEW TRUE
